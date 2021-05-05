@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LoginActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:text="Back"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_til_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Email Address">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_til_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Password"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/login_btn_signin"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentEnd="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            style="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="8dp"
+            android:text="Sign in"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

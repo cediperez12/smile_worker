@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".Activity.WelcomeActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/welcome_btn_use_phone"
+            android:layout_width="256dp"
+            android:layout_height="56dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Use phone or email"/>
+
+        <Button
+            android:id="@+id/welcome_btn_use_with_google"
+            android:layout_width="256dp"
+            android:layout_height="56dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Login with google"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:text="Don't have an account yet?"/>
+
+            <TextView
+                android:id="@+id/welcome_txtv_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:text="Sign up here"
+                android:textStyle="bold"
+                android:textColor="@color/purple_500"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -8,6 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Worker" />
+        android:theme="@style/Theme.Worker">
+        <activity android:name=".Activity.LoginActivity"></activity>
+        <activity android:name=".Activity.WelcomeActivity" />
+    </application>
 
 </manifest>

@@ -33,7 +33,11 @@ dependencies {
     //Butterknife
     implementation 'com.jakewharton:butterknife:10.2.3'
     implementation 'com.google.firebase:firebase-auth:20.0.4'
+    implementation platform('com.google.firebase:firebase-bom:27.1.0')
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
     implementation 'com.google.firebase:firebase-database:19.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
