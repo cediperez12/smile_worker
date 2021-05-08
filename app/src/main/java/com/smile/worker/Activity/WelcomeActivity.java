@@ -71,7 +71,8 @@ public class WelcomeActivity extends AppCompatActivity {
         });
 
         txtvSignup.setOnClickListener((view)->{
-
+            Intent intent = new Intent(view.getContext(), RegisterActivity.class);
+            startActivity(intent);
         });
     }
 
