@@ -27,4 +27,11 @@
         </item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="sample_txt_input_layout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+    </style>
 </resources>
