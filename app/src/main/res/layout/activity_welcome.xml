@@ -50,12 +50,12 @@
                 android:id="@+id/welcome_txtv_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_marginTop="8dp"
                 android:text="Sign up here"
-                android:textStyle="bold"
-                android:textColor="@color/purple_500"/>
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/blue_2F80ED"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
