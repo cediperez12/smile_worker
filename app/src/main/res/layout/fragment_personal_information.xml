@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Personal Information"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black_323F4B"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fr_pi_til_first_name"

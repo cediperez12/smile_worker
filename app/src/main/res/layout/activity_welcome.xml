@@ -1,39 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp"
     tools:context=".Activity.WelcomeActivity">
 
     <LinearLayout
+        android:id="@+id/layoutHolder_imgV_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/layoutHolder_btn"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_gravity="right"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textAppearance="@style/textStyle_title2"
+            android:text="Welcome Workers," />
+        <TextView
+            android:id="@+id/tv_welcome2"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/textStyle_title1"
+            android:textStyle="bold"
+            android:text="Workers" />
+
+        <ImageView
+            android:id="@+id/imgV_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="150dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/login_worker_image" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutHolder_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
+            app:icon="@drawable/outline_smartphone_24"
             android:id="@+id/welcome_btn_use_phone"
+            style="@style/button_outline"
             android:layout_width="256dp"
             android:layout_height="56dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="Use phone or email"/>
+            android:text="Use phone or email"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/welcome_btn_use_with_google"
+            app:icon="@drawable/icons_google"
+            style="@style/button_outline"
             android:layout_width="256dp"
             android:layout_height="56dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="Login with google"/>
+            android:text="Login with google"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button" />
 
         <LinearLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -43,8 +83,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                android:text="Don't have an account yet?"/>
+                android:fontFamily="@font/mulish_bold"
+                android:text="Don't have an account yet?"
+                android:textAppearance="@style/textStyle_captionGray" />
 
             <TextView
                 android:id="@+id/welcome_txtv_signup"
@@ -53,8 +94,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Sign up here"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                android:textColor="@color/blue_2F80ED"
+                android:fontFamily="@font/mulish_regular"
+                android:textAppearance="@style/textStyle_captionBlue"
                 android:textStyle="bold" />
 
         </LinearLayout>

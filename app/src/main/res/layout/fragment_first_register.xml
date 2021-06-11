@@ -24,7 +24,7 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
                 android:text="Sign Up"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black_323F4B"/>
 
             <TextView
                 android:layout_width="wrap_content"
