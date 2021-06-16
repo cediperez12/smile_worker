@@ -6,17 +6,17 @@
             @color/blue_2F80ED
         </item>
         <item name="colorPrimaryVariant">
-            @color/white_FFFFFF
+            @color/black_323F4B
         </item>
         <item name="colorOnPrimary">
-            @color/white_F9F0F0
+            @color/black_323F4B
         </item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">
             @color/black_323F4B
         </item>
         <item name="colorSecondaryVariant">
-            @color/gray_7B8794
+            @color/black_323F4B
         </item>
         <item name="colorOnSecondary">
             @color/black_323F4B
@@ -35,6 +35,9 @@
         <item name="boxCornerRadiusBottomEnd">8dp</item>
         <item name="boxCornerRadiusTopEnd">8dp</item>
     </style>
+
+
+    <!-- Button outLinedBox Color Blue/Primary Stroke -->
     <style name="button_outline" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="strokeColor">@color/blue_2F80ED</item>
         <item name="strokeWidth">2dp</item>
@@ -42,45 +45,117 @@
         <item name="android:textColor">@color/blue_2F80ED</item>
     </style>
 
+    <style name="button_toggleMale" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="icon">@drawable/outline_male_24</item>
+        <item name="iconTint">@color/blue_off_checked</item>
+        <item name="strokeColor">@color/blue_2F80ED</item>
+        <item name="backgroundTint">@color/male_toggle</item>
+        <item name="android:textColor">@color/blue_off_checked</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="button_toggleFemale" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="icon">@drawable/outline_female_24</item>
+        <item name="iconTint">@color/pink_off_checked</item>
+        <item name="strokeColor">@color/pink_ED7F7F</item>
+        <item name="backgroundTint">@color/female_toggle</item>
+        <item name="android:textColor">@color/pink_off_checked</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+
+    <!-- Button Fill Color Blue/Primary -->
     <style name="button_fill" parent="Widget.MaterialComponents.Button">
         <item name="backgroundColor">@color/blue_2F80ED</item>
         <item name="cornerRadius">10dp</item>
         <item name="android:textColor">@color/white_FFFFFF</item>
     </style>
+    <!-- Button Style White Background, Blue Text-Color -->
+    <style name="button_fill_transparent" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="backgroundTint">@color/white_FFFFFF</item>
+        <item name="android:textColor">@color/blue_2F80ED</item>
+    </style>
+    <!-- Button Text-Appearance Size 15sp Font Mulish-BOLD -->
+    <style name="buttonTxtApp" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">15sp</item>
+        <item name="fontFamily">@font/mulish_bold</item>
+    </style>
 
+    <!-- Text Size 32sp For Header-Activity or Fragment -->
     <style name="textStyle_header">
         <item name="android:textSize">32sp</item>
         <item name="fontFamily">@font/mulish_regular</item>
         <item name="android:textColor">@color/black_323F4B</item>
     </style>
-    <style name="textStyle_subHeader">
 
-    </style>
+    <!-- Text Size 56sp For Title-Activity or Fragment -->
     <style name="textStyle_title1">
         <item name="android:textSize">56sp</item>
         <item name="fontFamily">@font/mulish_regular</item>
         <item name="android:textColor">@color/black_323F4B</item>
     </style>
+
+    <!-- Text Size 26sp For Sub-header/Sub-Title -->
     <style name="textStyle_title2">
         <item name="android:textSize">26sp</item>
-        <item name="fontFamily">@font/mulish_regular</item>
+        <item name="fontFamily">@font/mulish_semi_bold</item>
         <item name="android:textColor">@color/black_323F4B</item>
     </style>
 
+    <!-- START: Text Size 14sp-->
     <style name="textStyle_captionGray">
         <item name="android:textSize">14sp</item>
-        <item name="fontFamily">@font/mulish_regular</item>
+        <item name="fontFamily">@font/mulish_semi_bold</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/gray_7B8794</item>
     </style>
+
     <style name="textStyle_captionBlue">
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/mulish_regular</item>
         <item name="android:textColor">@color/blue_2F80ED</item>
     </style>
+
     <style name="textStyle_captionBlack">
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/mulish_regular</item>
         <item name="android:textColor">@color/black_323F4B</item>
+    </style>
+    <!-- END: Text Size 14sp-->
+
+    <!-- Text Size 10sp For sub-description -->
+    <style name="textStyle_SubcaptionGray">
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/mulish_regular</item>
+        <item name="android:textColor">@color/gray_7B8794</item>
+    </style>
+
+
+    <!-- TextInputLayoutField Style -->
+    <style name="textInputLayoutField_outline" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeWidthFocused">3dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxStrokeColor">@color/tf_stroke_color_changer</item>
+    </style>
+    <!-- TextField TextAppearance -->
+    <style name="textField_outline" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/mulish_bold</item>
+    </style>
+
+    <style name="textInputLayout_dropDown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/tf_stroke_color_changer</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeWidthFocused">3dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+
     </style>
 
 </resources>

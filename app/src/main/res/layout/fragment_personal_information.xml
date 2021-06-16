@@ -1,156 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
-              android:padding="8dp"
+              android:padding="16dp"
               tools:context=".Fragments.RegisterFragment.PersonalInformationFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Personal Information"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
-        android:textColor="@color/black_323F4B"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/fr_pi_til_first_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/sample_txt_input_layout"
-        android:hint="First name">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/fr_pi_til_last_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/sample_txt_input_layout"
-        android:hint="Last name">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/Llayout_pi_holderField"
+        android:layout_width="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal Information"
+            android:layout_marginBottom="40dp"
+            android:textStyle=""
+            android:textAppearance="@style/textStyle_title1"
+            android:textColor="@color/black_323F4B"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/fr_pi_til_spn_day"
+            android:id="@+id/fr_pi_til_first_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            style="@style/sample_txt_input_layout">
+            android:layout_marginBottom="15dp"
+            app:startIconDrawable="@drawable/outline_person_24"
+            app:startIconTint="@color/tf_stroke_color_changer"
+            style="@style/textInputLayoutField_outline"
+            android:hint="First name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"/>
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B"
+                android:inputType="textPersonName"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/fr_pi_til_spn_month"
+            android:id="@+id/fr_pi_til_last_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            android:layout_marginEnd="16dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            app:startIconDrawable="@drawable/outline_person_24"
+            app:startIconTint="@color/tf_stroke_color_changer"
+            android:layout_marginBottom="20dp"
+            style="@style/textInputLayoutField_outline"
+            android:hint="Last name">
 
-            <AutoCompleteTextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false" />
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B"
+                android:inputType="textPersonName"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/fr_pi_til_spn_yr"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
-            <AutoCompleteTextView
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fr_pi_til_spn_day"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false"/>
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:startIconDrawable="@drawable/outline_today_24"
+                app:startIconTint="@color/tf_stroke_color_changer"
+                android:hint="DD"
+                style="@style/textInputLayoutField_outline"
+                >
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fr_pi_til_spn_month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:hint="MM"
+                style="@style/textInputLayout_dropDown">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/textField_outline"
+                    android:textColor="@color/black_323F4B"
+                    android:editable="false" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fr_pi_til_spn_yr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                android:hint="YY"
+                style="@style/textInputLayout_dropDown">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/textField_outline"
+                    android:textColor="@color/black_323F4B"
+                    android:editable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/fr_pi_btngroup_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:checkedButton="@id/fr_pi_btn_sex_male">
+
+            <Button
+                android:id="@+id/fr_pi_btn_sex_male"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:textAppearance="@style/buttonTxtApp"
+                style="@style/button_toggleMale"
+                android:text="MALE"/>
+
+            <Button
+                android:id="@+id/fr_pi_btn_sex_female"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:textAppearance="@style/buttonTxtApp"
+                style="@style/button_toggleFemale"
+                android:text="FEMALE"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
 
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/fr_pi_btngroup_sex"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:singleSelection="true"
-        app:selectionRequired="true"
-        app:checkedButton="@id/fr_pi_btn_sex_male">
-
-        <Button
-            android:id="@+id/fr_pi_btn_sex_male"
-            android:layout_width="96dp"
-            android:layout_height="64dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="MALE"/>
-
-        <Button
-            android:id="@+id/fr_pi_btn_sex_female"
-            android:layout_width="96dp"
-            android:layout_height="64dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="FEMALE"/>
-
-    </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/fr_pi_btn_cancel"
+            style="@style/button_fill_transparent"
             android:layout_width="128dp"
             android:layout_height="64dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:text="Back"/>
+            android:text="Back"
+            android:textAppearance="@style/buttonTxtApp" />
 
         <Button
             android:id="@+id/fr_pi_btn_next"
+            style="@style/button_fill"
             android:layout_width="128dp"
             android:layout_height="64dp"
             android:layout_alignParentEnd="true"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            style="@style/Widget.MaterialComponents.Button"
-            android:text="NEXT"/>
+            android:text="NEXT"
+            android:textAppearance="@style/buttonTxtApp" />
 
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

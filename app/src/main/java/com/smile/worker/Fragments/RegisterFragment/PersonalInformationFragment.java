@@ -105,7 +105,7 @@ public class PersonalInformationFragment extends Fragment {
     }
 
     private void init(){
-        _parent = (RegisterActivity)getContext();
+        _parent = (RegisterActivity)getContext();//Kuwa parent na act
 
         AutoCompleteTextView actMonth = (AutoCompleteTextView)tilMonth.getEditText(),
         actYear = (AutoCompleteTextView)tilSpnYear.getEditText();

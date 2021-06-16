@@ -1,34 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white_FFFFFF">
-        #FFFFFF
-    </color>
-    <color name="blue_2F80ED">
-        #2F80ED
-    </color>
-    <color name="black_323F4B">
-        #323F4B
-    </color>
-    <color name="white_F9F0F0">
-        #F9F0F0
-    </color>
-    <color name="red_ED7F7F">
-        #ED7F7F
-    </color>
-    <color name="yellow_FEC520">
-        #FEC520
-    </color>
-    <color name="gray_7B8794">
-        #7B8794
-    </color>
-    <color name="green_219553">
-        #219553
-    </color>
-    <color name="blue_green_5ACFD6">
-        #5ACFD6
-    </color>
-    <color name="lightblue_69BAF4">
-        #69BAF4
-    </color>
+    <color name="white_FFFFFF">#FFFFFF</color>
 
+    <color name="blue_2F80ED">#2F80ED</color>
+
+    <color name="black_323F4B">#323F4B</color>
+
+    <color name="white_F9F0F0">#F9F0F0</color>
+
+    <color name="red_ED7F7F">#ED7F7F</color>
+
+    <color name="yellow_FEC520">#FEC520</color>
+
+    <color name="gray_7B8794">#7B8794</color>
+
+    <color name="green_219553">#219553</color>
+
+    <color name="blue_green_5ACFD6">#5ACFD6</color>
+
+    <color name="lightblue_69BAF4">#69BAF4</color>
+
+    <color name="pink_ED7F7F">#ED7F7F</color>
 </resources>

@@ -29,9 +29,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textAppearance="@style/textStyle_captionGray"
                 android:text="Short description \nabout sign up"
-                android:textColor="@android:color/darker_gray"/>
+                />
 
         </LinearLayout>
 
@@ -43,8 +43,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="16dp"
             android:layout_marginEnd="16dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            style="@style/Widget.MaterialComponents.Button"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill"
             app:cornerRadius="8dp"
             android:letterSpacing="0.1"
             android:text="Continue"/>
