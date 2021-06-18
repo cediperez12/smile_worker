@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skills"
+            android:layout_marginBottom="40dp"
+            android:textAppearance="@style/textStyle_title1"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfSkills_fr_workSetup_skills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Skills"
+            app:endIconMode="custom"
+
+            app:endIconDrawable="@drawable/baseline_add_box_24"
+            app:endIconTint="@color/tf_stroke_color_changer"
+            app:startIconDrawable="@drawable/outline_work_outline_24"
+            app:startIconTint="@color/tf_stroke_color_changer"
+            style="@style/textInputLayoutField_outline">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B"
+                android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIST OF YOUR SKILLS"
+                android:textStyle="bold"
+                android:layout_marginRight="8dp"
+                android:textAppearance="@style/textStyle_captionBlack"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@color/black_323F4B"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack_fr_workSetup_skills"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill_transparent"
+            android:text="BACK"/>
+
+        <Button
+            android:id="@+id/btnNext_fr_workSetup_skills"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill"
+            android:text="NEXT"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

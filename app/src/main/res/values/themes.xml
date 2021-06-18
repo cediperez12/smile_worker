@@ -81,9 +81,22 @@
         <item name="fontFamily">@font/mulish_bold</item>
     </style>
 
+    <!-- Button Text-Appearance Size 16sp Font Mulish-BOLD -->
+    <style name="TxtApp_16">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/mulish_bold</item>
+    </style>
+
+
     <!-- Text Size 32sp For Header-Activity or Fragment -->
     <style name="textStyle_header">
         <item name="android:textSize">32sp</item>
+        <item name="fontFamily">@font/mulish_regular</item>
+        <item name="android:textColor">@color/black_323F4B</item>
+    </style>
+
+    <style name="textStyle_title3">
+        <item name="android:textSize">21sp</item>
         <item name="fontFamily">@font/mulish_regular</item>
         <item name="android:textColor">@color/black_323F4B</item>
     </style>
@@ -137,6 +150,7 @@
         <item name="boxStrokeWidthFocused">3dp</item>
         <item name="boxCornerRadiusBottomStart">8dp</item>
         <item name="boxCornerRadiusBottomEnd">8dp</item>
+
         <item name="boxCornerRadiusTopStart">8dp</item>
         <item name="boxCornerRadiusTopEnd">8dp</item>
         <item name="boxStrokeColor">@color/tf_stroke_color_changer</item>

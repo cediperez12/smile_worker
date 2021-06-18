@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/btnSkip_fr_workSetup_gigs"
+        android:layout_width="108dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@style/buttonTxtApp"
+        style="@style/button_fill_transparent"
+        android:text="Skip"/>
+    <LinearLayout
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:textStyle="bold"
+            android:text="Gigs"
+            android:layout_marginBottom="40dp"
+            android:textAppearance="@style/textStyle_title1"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfGigs_fr_workSetup_gigs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Gigs name"
+            app:startIconDrawable="@drawable/outline_work_outline_24"
+            app:startIconTint="@color/tf_stroke_color_changer"
+            style="@style/textInputLayoutField_outline">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfGigsDesc_fr_workSetup_gigs"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Gigs Description"
+            style="@style/textInputLayoutField_outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="false"
+                android:gravity="top"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B"
+                android:inputType="textMultiLine">
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfGigsRate_fr_workSetup_gigs"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Rate or Price"
+            app:startIconDrawable="@drawable/outline_peso_24"
+            app:startIconTint="@color/tf_stroke_color_changer"
+            style="@style/textInputLayoutField_outline">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack_fr_workSetup_gigs"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill_transparent"
+            android:text="BACK"/>
+
+        <Button
+            android:id="@+id/btnNext_fr_workSetup_Gigs"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill"
+            android:text="NEXT"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

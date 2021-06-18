@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verification"
+            android:textAppearance="@style/textStyle_title1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PLEASE Send the following documents below\nto Verify
+Your Account:"
+            android:textStyle="bold"
+            android:textAppearance="@style/textStyle_captionBlack"/>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lLayout_fr_verification_labelHolder"
+        android:layout_centerInParent="true"
+        android:background="@drawable/blue_corner_shape"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="26dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/outline_fact_check_24"
+            app:tint="@color/white_FFFFFF"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NBI CLEARANCE"
+            android:textColor="@color/white_FFFFFF"
+            android:paddingRight="120dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="46dp"
+            android:textAppearance="@style/TxtApp_16"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VALID ID"
+            android:textColor="@color/white_FFFFFF"
+            android:paddingRight="120dp"
+            android:layout_marginLeft="46dp"
+            android:textStyle="bold"
+            android:layout_gravity="left"
+            android:layout_marginBottom="8dp"
+            android:textAppearance="@style/TxtApp_16"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CERTIFICATES PICTURE\n(IF EXIST)"
+            android:layout_gravity="left"
+            android:layout_marginLeft="46dp"
+            android:layout_marginBottom="32dp"
+            android:textColor="@color/white_FFFFFF"
+            android:paddingRight="120dp"
+            android:textStyle="bold"
+            android:textAppearance="@style/TxtApp_16"/>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lLayout_fr_verification_labelHolder"
+        android:paddingRight="120dp"
+        android:layout_marginLeft="26dp"
+        android:text="NOTE: If you send the following documents\n we will review about 2 to 5 days to verify"
+        android:textAppearance="@style/textStyle_SubcaptionGray"
+        android:textColor="@color/gray_7B8794"
+        android:textStyle="bold" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack_fr_workSetup_erification"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill_transparent"
+            android:text="BACK"/>
+
+        <Button
+            android:id="@+id/btnNext_fr_workSetup_verification"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill"
+            android:text="DONE"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

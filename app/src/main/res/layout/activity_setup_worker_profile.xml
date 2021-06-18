@@ -7,12 +7,11 @@
     tools:context=".Activity.SetupWorkerProfileActivity">
 
 
-    <LinearLayout
-        android:id="@+id/SetupWorker_LinearLayoutHolderButtons"
+    <FrameLayout
+        android:id="@+id/setupWorker_fr_layout_replaceable"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+    </FrameLayout>
 
-
-    </LinearLayout>
 </RelativeLayout>

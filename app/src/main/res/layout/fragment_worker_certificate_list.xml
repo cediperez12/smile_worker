@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/blue_stroke_corner_shape"
+    android:padding="16dp"
+    android:layout_margin="4dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvCertTitle_fr_workSetup_certificate_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/textStyle_title3"
+        android:textStyle="bold"
+        android:text="Certificate name"/>
+
+    <TextView
+        android:id="@+id/tvCertEventName_fr_workSetup_certificate_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/textStyle_captionBlack"
+        android:textStyle="bold"
+        android:text="Event name"/>
+
+    <TextView
+        android:id="@+id/tvCertYr_fr_workSetup_certificate_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/textStyle_captionBlack"
+        android:text="YR"/>
+
+    <TextView
+        android:id="@+id/tvRemove_fr_workSetup_certificate_list"
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red_ED7F7F"
+        android:textAppearance="@style/TxtApp_16"
+        android:drawableEnd="@drawable/outline_arrow_right_24"
+        android:drawableTint="@color/red_ED7F7F"
+        android:drawablePadding="8dp"
+        android:paddingRight="8dp"
+        android:text="Remove"
+        />
+</LinearLayout>

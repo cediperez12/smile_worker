@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button
+        android:id="@+id/btnSkip_fr_workSetup_certificates"
+        android:layout_width="108dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@style/buttonTxtApp"
+        style="@style/button_fill_transparent"
+        android:text="Skip"/>
+
+    <LinearLayout
+        android:id="@+id/Llayout_fr_cert_fieldHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSkip_fr_workSetup_certificates"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Certificates"
+            android:textAppearance="@style/textStyle_title1" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfCertTitle_fr_workSetup_certificate"
+            style="@style/textInputLayoutField_outline"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:hint="Certificate Title"
+            app:startIconDrawable="@drawable/outline_certificate_24"
+            app:startIconTint="@color/tf_stroke_color_changer">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfCertName_fr_workSetup_certificate"
+            style="@style/textInputLayoutField_outline"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="8dp"
+            android:hint="School Name"
+            app:startIconDrawable="@drawable/outline_certificate_24"
+            app:startIconTint="@color/tf_stroke_color_changer">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/actCertYr_fr_workSetup_certificate"
+                style="@style/textInputLayout_dropDown"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Year"
+                app:startIconDrawable="@drawable/outline_calendar_24">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:textAppearance="@style/textField_outline"
+                    android:textColor="@color/black_323F4B" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btnAddCert_fr_workSetup_certificate"
+                android:layout_width="match_parent"
+                android:text="add"
+                android:textAppearance="@style/buttonTxtApp"
+                android:textColor="@color/white_FFFFFF"
+                android:layout_margin="8dp"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIST OF YOUR CERTIFICATES"
+                android:textStyle="bold"
+                android:layout_marginRight="8dp"
+                android:textAppearance="@style/textStyle_captionBlack"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@color/black_323F4B"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack_fr_workSetup_certificates"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill_transparent"
+            android:text="BACK"/>
+
+        <Button
+            android:id="@+id/btnNext_fr_workSetup_certificates"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill"
+            android:text="NEXT"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

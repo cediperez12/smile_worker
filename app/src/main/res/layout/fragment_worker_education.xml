@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnSkip_fr_workSetup_education"
+        android:layout_width="108dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@style/buttonTxtApp"
+        style="@style/button_fill_transparent"
+        android:text="Skip"/>
+
+    <LinearLayout
+        android:id="@+id/Llayout_fr_education_fieldHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSkip_fr_workSetup_education"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Education"
+            android:textAppearance="@style/textStyle_title1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginBottom="40dp"
+            android:text="UPDATED"
+            android:textAppearance="@style/textStyle_captionBlack"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Education Level"
+            android:textAppearance="@style/textStyle_captionBlack"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfEducLevel_fr_workSetup_education"
+            style="@style/textInputLayout_dropDown"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:hint="N/A"
+            app:startIconDrawable="@drawable/outline_school_24">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfProf_fr_workSetup_prof"
+            style="@style/textInputLayoutField_outline"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:hint="School Name"
+            app:startIconDrawable="@drawable/outline_building_24"
+            app:startIconTint="@color/tf_stroke_color_changer">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfYear_fr_workSetup_education"
+            style="@style/textInputLayout_dropDown"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Year"
+            app:startIconDrawable="@drawable/outline_calendar_24">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack_fr_workSetup_education"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill_transparent"
+            android:text="BACK"/>
+
+        <Button
+            android:id="@+id/btnNext_fr_workSetup_education"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:textAppearance="@style/buttonTxtApp"
+            style="@style/button_fill"
+            android:text="NEXT"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
