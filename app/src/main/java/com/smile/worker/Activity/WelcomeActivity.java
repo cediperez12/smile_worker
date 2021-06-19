@@ -89,6 +89,7 @@ public class WelcomeActivity extends AppCompatActivity {
                             //Intent to main
                             Intent intent = new Intent();
                             startActivity(intent);
+
                             finish();
                         }else{
                             //Show error results

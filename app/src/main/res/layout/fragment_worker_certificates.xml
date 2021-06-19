@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
+    tools:context=".Fragments.SetupWorkerFragments.CertificatesFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <Button
         android:id="@+id/btnSkip_fr_workSetup_certificates"
@@ -46,12 +48,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tfCertName_fr_workSetup_certificate"
+            android:id="@+id/tfCertEvent_fr_workSetup_certificate"
             style="@style/textInputLayoutField_outline"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_marginTop="8dp"
-            android:hint="School Name"
+            android:hint="Event Name"
             app:startIconDrawable="@drawable/outline_certificate_24"
             app:startIconTint="@color/tf_stroke_color_changer">
 

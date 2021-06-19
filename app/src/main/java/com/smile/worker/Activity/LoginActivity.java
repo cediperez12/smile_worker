@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                     //Successfully logged in.
                     .addOnSuccessListener(authResult->{
                         //Intent to Main
-                        Intent intent = new Intent();
+                        Intent intent = new Intent(getApplicationContext(),SetupWorkerProfileActivity.class);
                         startActivity(intent);
                         finish();
                     })

@@ -2,8 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Fragments.SetupWorkerFragments.EducationFragment">
 
     <Button
         android:id="@+id/btnSkip_fr_workSetup_education"
@@ -62,7 +64,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tfProf_fr_workSetup_prof"
+            android:id="@+id/tfSchoolName_fr_workSetup_education"
             style="@style/textInputLayoutField_outline"
             android:layout_width="match_parent"
             android:layout_height="64dp"

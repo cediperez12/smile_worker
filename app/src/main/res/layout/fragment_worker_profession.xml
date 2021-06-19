@@ -2,8 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.SetupWorkerFragments.WorkerProfessionFragment">
 
     <LinearLayout
         android:layout_alignParentTop="true"
@@ -71,7 +73,7 @@
             android:layout_height="64dp"
             android:textAppearance="@style/buttonTxtApp"
             style="@style/button_fill_transparent"
-            android:text="BACK"/>
+            android:text="cancel"/>
 
         <Button
             android:id="@+id/btnNext_fr_workSetup_prof"
