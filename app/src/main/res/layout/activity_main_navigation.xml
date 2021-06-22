@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MainNavigationActivity">
+<RelativeLayout
+    android:id="@+id/lLayout_mainNav_topBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/imageButtonMainAct_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitCenter"
+        style="@style/button_fill_transparent"
+        android:tint="@color/blue_2F80ED"
+        android:src="@drawable/ic_outline_notifications_24"/>
+
+    <ImageButton
+        android:id="@+id/imageButtonMainAct_profile"
+        style="@style/button_fill_transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/lLayout_mainNav_viewProfile"
+        android:scaleType="fitCenter"
+        android:src="@drawable/outline_person_24"
+        android:tint="@color/blue_2F80ED" />
+
+    <LinearLayout
+        android:id="@+id/lLayout_mainNav_viewProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvMainAct_fname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/textStyle_captionBlack"
+            android:text="Firstname, Lastname"/>
+        <TextView
+            android:id="@+id/tvMainAct_viewProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/textStyle_SubcaptionGray"
+            android:text="view profile"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+    <fragment
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_above="@+id/nav_tab"
+        android:layout_below="@+id/lLayout_mainNav_topBar"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation_holder" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_tab"
+        app:menu="@menu/nav_bottom_menu"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        app:labelVisibilityMode="selected"
+        app:itemTextColor="@color/white_FFFFFF"
+        app:itemTextAppearanceActive="@style/textStyle_navText"
+        android:background="@drawable/nav_background"
+
+        android:padding="8dp"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>

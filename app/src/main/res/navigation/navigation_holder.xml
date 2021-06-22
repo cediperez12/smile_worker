@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_holder"
+    app:startDestination="@id/fragment_nav_sched">
+
+    <fragment
+        android:id="@+id/fragment_nav_sched"
+        android:name="com.smile.worker.Fragments.Navigation.fragment_nav_sched"
+        android:label="fragment_nav_sched"
+        tools:layout="@layout/fragment_nav_sched" />
+    <fragment
+        android:id="@+id/fragment_nav_msg"
+        android:name="com.smile.worker.Fragments.Navigation.fragment_nav_msg"
+        android:label="fragment_nav_msg"
+        tools:layout="@layout/fragment_nav_chat" />
+    <fragment
+        android:id="@+id/fragment_nav_reports"
+        android:name="com.smile.worker.Fragments.Navigation.fragment_nav_reports"
+        android:label="fragment_nav_reports"
+        tools:layout="@layout/fragment_nav_reports" />
+    <fragment
+        android:id="@+id/fragment_nav_map"
+        android:name="com.smile.worker.Fragments.Navigation.fragment_nav_map"
+        android:label="fragment_nav_map"
+        tools:layout="@layout/fragment_nav_map" />
+</navigation>

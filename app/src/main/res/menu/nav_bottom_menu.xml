@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragment_nav_sched"
+        android:title="Schedule"
+        android:icon="@drawable/sched_selected"
+        />
+    <item
+        android:id="@+id/fragment_nav_msg"
+        android:title="Chat"
+        android:icon="@drawable/msg_selected"
+        />
+    <item
+        android:id="@+id/fragment_nav_reports"
+        android:title="Reports"
+        android:icon="@drawable/reports_selected"
+       />
+    <item
+        android:id="@+id/fragment_nav_map"
+        android:title="Map"
+        android:icon="@drawable/map_selected"
+        />
+
+</menu>

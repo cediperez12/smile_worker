@@ -1,6 +1,5 @@
-package com.smile.worker.Fragments.SetupWorkerFragments;
+package com.smile.worker.Fragments.Navigation;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,30 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
-import com.smile.worker.Activity.LoginActivity;
-import com.smile.worker.Activity.MainNavigationActivity;
-import com.smile.worker.Activity.SetupWorkerProfileActivity;
 import com.smile.worker.R;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link VerificationFragment#newInstance} factory method to
+ * Use the {@link fragment_nav_msg#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class VerificationFragment extends Fragment {
-
-    private SetupWorkerProfileActivity _parent;
-
-    @BindView(R.id.btnDone_fr_workSetup_verification)
-    Button btnDone;
-    @BindView(R.id.btnBack_fr_workSetup_verification)
-    Button btnBack;
+public class fragment_nav_msg extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,7 +26,7 @@ public class VerificationFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public VerificationFragment() {
+    public fragment_nav_msg() {
         // Required empty public constructor
     }
 
@@ -52,11 +36,11 @@ public class VerificationFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment VerificationFragment.
+     * @return A new instance of fragment fragment_nav_msg.
      */
     // TODO: Rename and change types and number of parameters
-    public static VerificationFragment newInstance(String param1, String param2) {
-        VerificationFragment fragment = new VerificationFragment();
+    public static fragment_nav_msg newInstance(String param1, String param2) {
+        fragment_nav_msg fragment = new fragment_nav_msg();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -77,19 +61,6 @@ public class VerificationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_worker_verification, container, false);
-        ButterKnife.bind(this,v);
-        _parent = (SetupWorkerProfileActivity)getContext();
-        btnBack.setOnClickListener(v1 -> {
-            _parent.getCertificatesFragment();
-        });
-        btnDone.setOnClickListener(v1 -> {
-            Toast.makeText(_parent,"Good job Worker",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(v.getContext(), MainNavigationActivity.class);
-            startActivity(intent);
-        });
-
-        return v;
-
+        return inflater.inflate(R.layout.fragment_nav_chat, container, false);
     }
 }

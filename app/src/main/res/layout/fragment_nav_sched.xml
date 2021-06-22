@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".Fragments.Navigation.fragment_nav_sched">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/tv_fr_MainSched"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Schedule"
+        android:textAppearance="@style/textStyle_title1"/>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/tv_fr_MainSched"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:text="List of Schedule"
+            android:textAppearance="@style/textStyle_captionBlack" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:text="(69)"
+            android:textAppearance="@style/textStyle_captionBlue" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
