@@ -9,8 +9,13 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.smile.worker.R;
@@ -20,7 +25,12 @@ import butterknife.ButterKnife;
 
 public class MainNavigationActivity extends AppCompatActivity {
 
-@BindView(R.id.nav_tab)BottomNavigationView botNav;
+@BindView(R.id.nav_tab)
+BottomNavigationView botNav;
+@BindView(R.id.imageButtonMainAct_notification)
+ImageButton btnNotification;
+@BindView(R.id.lLayout_mainNav_viewProfile)
+    LinearLayout lLayoutViewProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +43,20 @@ public class MainNavigationActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(botNav, navController);
 
 
+        btnNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        lLayoutViewProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"CLICKED",Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
