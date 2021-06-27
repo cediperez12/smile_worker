@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.smile.worker.R;
 
 import butterknife.BindView;
@@ -25,12 +26,14 @@ import butterknife.ButterKnife;
 
 public class MainNavigationActivity extends AppCompatActivity {
 
-@BindView(R.id.nav_tab)
-BottomNavigationView botNav;
-@BindView(R.id.imageButtonMainAct_notification)
-ImageButton btnNotification;
-@BindView(R.id.lLayout_mainNav_viewProfile)
+    @BindView(R.id.nav_tab)
+    BottomNavigationView botNav;
+    @BindView(R.id.imageButtonMainAct_notification)
+    ImageButton btnNotification;
+    @BindView(R.id.lLayout_mainNav_viewProfile)
     LinearLayout lLayoutViewProfile;
+
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,13 @@ ImageButton btnNotification;
         setContentView(R.layout.activity_main_navigation);
         ButterKnife.bind(this);
         botNav.setItemIconTintList(null);
+
+        //Temporary
+//        auth = FirebaseAuth.getInstance();
+//        auth.signOut();
+//        Intent intent = new Intent(this,WelcomeActivity.class);
+//        startActivity(intent);
+//        finish();
 
         NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
         NavigationUI.setupWithNavController(botNav, navController);

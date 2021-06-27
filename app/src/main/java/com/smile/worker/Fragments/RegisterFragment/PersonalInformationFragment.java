@@ -52,7 +52,7 @@ public class PersonalInformationFragment extends Fragment {
 
     private RegisterActivity _parent;
 
-    private String strSex = "MALE";
+    private String strSex = "Male";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -161,9 +161,9 @@ public class PersonalInformationFragment extends Fragment {
 
         btnGroupSex.addOnButtonCheckedListener((togglebtn,checkedId,isChecked)->{
             if(checkedId == btnSexMale.getId()){
-                strSex = "MALE";
+                strSex = "Male";
             }else{
-                strSex = "FEMALE";
+                strSex = "Female";
             }
         });
 

@@ -44,6 +44,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "84394709364-nu7k6nru3e05e2miih040edbllbuh67s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smile.worker",
+            "certificate_hash": "f73d6652401a1d05c1734460dae0b08d66c8f28f"
+          }
+        },
+        {
           "client_id": "84394709364-d4gtea3askersstu2umvlo2vb1q2tt5h.apps.googleusercontent.com",
           "client_type": 3
         }

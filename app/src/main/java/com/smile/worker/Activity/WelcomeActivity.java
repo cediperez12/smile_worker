@@ -23,8 +23,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthCredential;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.smile.worker.R;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -38,6 +44,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private GoogleSignInClient googleSignInClient;
     private FirebaseAuth auth;
+    private DatabaseReference userReference;
+
+    public static final String GOOGLE_LOGIN = "google_account";
+    public static final int GOOGLE_NO_PERSONAL_INFO = 1001;
 
     private static final int GOOGLE_SIGN_IN_RESULT = 1;
 
@@ -47,12 +57,23 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
         ButterKnife.bind(this);
         init();
-
     }
 
     private void init(){
         //FirebaseAuth
         auth = FirebaseAuth.getInstance();
+
+        //Initiate User Reference
+        userReference = FirebaseDatabase.getInstance().getReference("users");
+
+        //Check if there's an account online in the app.
+        FirebaseUser user = auth.getCurrentUser();
+        if(user != null){
+            //Go to Main
+            Intent intent = new Intent(this,MainNavigationActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         //Google Sign in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -86,9 +107,35 @@ public class WelcomeActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            //Intent to main
-                            Intent intent = new Intent();
-                            startActivity(intent);
+                            FirebaseUser currentUser = task.getResult().getUser();
+
+                            userReference.child(currentUser.getUid())
+                                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            Intent intent;
+
+                                            //Check if the user has its personal information
+                                            if(snapshot.exists()){
+                                                intent = new Intent(getApplicationContext(),
+                                                        MainNavigationActivity.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }else{
+                                                intent = new Intent(getApplicationContext(),
+                                                        RegisterActivity.class);
+                                                intent.putExtra(RegisterActivity.REGISTER_FLAGS,
+                                                        RegisterActivity.GOOGLE_REGISTRATION);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
 
                             finish();
                         }else{
