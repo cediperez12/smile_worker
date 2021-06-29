@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.smile.worker.Activity.SetupWorkerProfileActivity;
+import com.smile.worker.Models.Gig;
 import com.smile.worker.R;
 
 import org.w3c.dom.Text;
@@ -94,6 +95,31 @@ public class GigsFragment extends Fragment {
         });
         btnNext.setOnClickListener(v1 -> {
             _parent.getCertificatesFragment();
+
+            try{
+                //fetch data
+                String gigName = tilGigsName.getEditText().getText().toString().trim();
+                String gigDescription = tilGigsDescription.getEditText().getText().toString().trim();
+                double gigRate = Double.parseDouble(tilGigsRate.getEditText().getText()
+                        .toString().trim());
+
+                //Check input data
+                if(gigName.isEmpty()){
+                    throw new Exception("No gig name");
+                }else if(gigDescription.isEmpty()){
+                    throw new Exception("No gig description");
+                } else if (gigRate <= 0) {
+                    throw new Exception("Gig must be higher than 0");
+                }
+
+                //Store data
+                //Then go to next
+                Gig gig = new Gig(gigName,gigDescription,gigRate);
+                _parent.getGig(gig);
+            }catch (Exception ex){
+                ex.printStackTrace();
+                //Error here
+            }
         });
         btnSkip.setOnClickListener(v1 -> {
             _parent.getCertificatesFragment();

@@ -14,6 +14,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.smile.worker.Activity.LoginActivity;
 import com.smile.worker.Activity.RegisterActivity;
 import com.smile.worker.Activity.SetupWorkerProfileActivity;
+import com.smile.worker.Models.WorkerProfession;
 import com.smile.worker.R;
 
 import butterknife.BindView;
@@ -86,16 +87,31 @@ public class WorkerProfessionFragment extends Fragment {
         _parent = (SetupWorkerProfileActivity) getContext();
 
         btnNext.setOnClickListener(v1 ->{
-            //Change into personal fragment.
-            _parent.getEducationFragment();
+            //Fetch worker information
+            String workerProfession = tilWorkProfession.getEditText().getText().toString().trim();
+            String workerDescription = tilWorkDescription.getEditText().getText().toString().trim();
+
+            //Check if information valid
+            try{
+                if(workerProfession.isEmpty())
+                    throw new Exception("Worker Profession empty");
+                else if(workerDescription.isEmpty())
+                    throw new Exception("Worker Description empty");
+
+                //Save and store data
+                //go to education fragment
+                WorkerProfession wp = new WorkerProfession(workerProfession, workerDescription);
+                _parent.getWorkerProfesison(wp);
+            }catch (Exception ex){
+                ex.printStackTrace();
+                //Errors exists here
+            }
         });
+
         btnBack.setOnClickListener(v1 -> {
-
-            Intent intent = new Intent(v.getContext(), LoginActivity.class);
-            startActivity(intent);
-
+            _parent.onBackPressed();
         });
-        return v;
 
+        return v;
     }
 }

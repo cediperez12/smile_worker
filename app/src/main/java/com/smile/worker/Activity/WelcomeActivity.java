@@ -46,9 +46,6 @@ public class WelcomeActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference userReference;
 
-    public static final String GOOGLE_LOGIN = "google_account";
-    public static final int GOOGLE_NO_PERSONAL_INFO = 1001;
-
     private static final int GOOGLE_SIGN_IN_RESULT = 1;
 
     @Override
@@ -95,6 +92,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         txtvSignup.setOnClickListener((view)->{
             Intent intent = new Intent(view.getContext(), RegisterActivity.class);
+            intent.putExtra(RegisterActivity.REGISTER_FLAGS,RegisterActivity.NORMAL_REGISTRATION);
             startActivity(intent);
         });
     }

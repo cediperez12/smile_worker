@@ -7,10 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.smile.worker.Activity.SetupWorkerProfileActivity;
+import com.smile.worker.Models.Education;
 import com.smile.worker.R;
 
 import butterknife.BindView;
@@ -93,11 +96,43 @@ public class EducationFragment extends Fragment {
 
         _parent = (SetupWorkerProfileActivity)getContext();
 
+        //Setup Education Level & Year
+        ArrayAdapter<String> educLevelAdapter = new ArrayAdapter<String>(v.getContext(),android.R.layout.simple_dropdown_item_1line,getResources().getStringArray(R.array.arr_educ_lvl));
+        ArrayAdapter<String> yrAdapter = new ArrayAdapter<String>(v.getContext(),
+                android.R.layout.simple_dropdown_item_1line,
+                getResources().getStringArray(R.array.arr_year));
+
+        AutoCompleteTextView educLevelEtxt =
+                (AutoCompleteTextView)tilEducationalLevel.getEditText(),
+        yearEtxt = (AutoCompleteTextView)tilSchoolYear.getEditText();
+        educLevelEtxt.setAdapter(educLevelAdapter);
+        yearEtxt.setAdapter(yrAdapter);
+
         btnBack.setOnClickListener(v1 -> {
             _parent.getWorkerProfessionFragment();
         });
         btnNext.setOnClickListener(v1 -> {
-            _parent.getSkillsFragment();
+            //Fetch data
+            String educationLevel = tilEducationalLevel.getEditText().getText().toString().trim();
+            String schoolName = tilSchoolName.getEditText().getText().toString().trim();
+            String year = tilSchoolYear.getEditText().getText().toString().trim();
+
+            try{
+                //Check data validity
+                if(educationLevel.isEmpty())
+                    throw new Exception("education level error");
+                else if(schoolName.isEmpty())
+                    throw new Exception("No school");
+                else if(year.isEmpty())
+                    throw new Exception("No year selected");
+
+                //Save data and store
+                //Then go to next
+                Education education = new Education(educationLevel,schoolName,year);
+                _parent.getEducation(education);
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
         });
         btnSkip.setOnClickListener(v1 ->{
             _parent.getSkillsFragment();

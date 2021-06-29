@@ -11,8 +11,14 @@ import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.smile.worker.Activity.SetupWorkerProfileActivity;
+import com.smile.worker.Adapter.SkillListAdapter;
 import com.smile.worker.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -32,7 +38,12 @@ public class SkillsFragment extends Fragment {
     @BindView(R.id.btnNext_fr_workSetup_skills)
     Button btnNext;
 
+    @BindView(R.id.fr_worker_recyclerview)
+    RecyclerView recyclerView;
+
     private SetupWorkerProfileActivity _parent;
+    private List<String> skillList;
+    private SkillListAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -83,13 +94,29 @@ public class SkillsFragment extends Fragment {
         ButterKnife.bind(this,v);
         _parent = (SetupWorkerProfileActivity) getContext();
 
+        skillList = new ArrayList<>();
+        adapter = new SkillListAdapter(skillList);
+
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
+        recyclerView.setAdapter(adapter);
+
+        tilSkills.setEndIconOnClickListener(v1->{
+            String skill = tilSkills.getEditText().getText().toString().trim();
+            
+            if(!skill.isEmpty()){
+                tilSkills.getEditText().setText("");
+                skillList.add(skill);
+                adapter.notifyDataSetChanged();
+            }
+        });
+
         btnBack.setOnClickListener(v1 -> {
             _parent.getEducationFragment();
         });
 
         btnNext.setOnClickListener(v1 -> {
-            _parent.getGigsFragment();
-
+            _parent.getSkills(skillList);
         });
 
         return v;

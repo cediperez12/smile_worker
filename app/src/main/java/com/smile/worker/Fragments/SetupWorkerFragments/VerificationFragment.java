@@ -84,9 +84,7 @@ public class VerificationFragment extends Fragment {
             _parent.getCertificatesFragment();
         });
         btnDone.setOnClickListener(v1 -> {
-            Toast.makeText(_parent,"Good job Worker",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(v.getContext(), MainNavigationActivity.class);
-            startActivity(intent);
+            _parent.createWorkerProfile();
         });
 
         return v;

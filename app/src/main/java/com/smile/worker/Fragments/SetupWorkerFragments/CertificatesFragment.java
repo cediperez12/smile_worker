@@ -7,12 +7,21 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.smile.worker.Activity.SetupWorkerProfileActivity;
+import com.smile.worker.Adapter.CertificateListAdapter;
+import com.smile.worker.Models.Certificate;
 import com.smile.worker.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -38,8 +47,13 @@ public class CertificatesFragment extends Fragment {
     TextInputLayout tilCertTitle;
     @BindView(R.id.actCertYr_fr_workSetup_certificate)
     TextInputLayout tilCertYr;
+    @BindView(R.id.fr_worker_certificate_recyclerview)
+    RecyclerView recycler;
 
     private SetupWorkerProfileActivity _parent;
+
+    private List<Certificate> listOfCertificate;
+    private CertificateListAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -90,6 +104,46 @@ public class CertificatesFragment extends Fragment {
         ButterKnife.bind(this,v);
         _parent = (SetupWorkerProfileActivity)getContext();
 
+        //Setup Year
+        ArrayAdapter<String> yearAdapter = new ArrayAdapter<String>(v.getContext(),
+                android.R.layout.simple_dropdown_item_1line,
+                getResources().getStringArray(R.array.arr_year));
+
+        AutoCompleteTextView yrEtxt = (AutoCompleteTextView)tilCertYr.getEditText();
+        yrEtxt.setAdapter(yearAdapter);
+
+        listOfCertificate = new ArrayList<>();
+        adapter = new CertificateListAdapter(listOfCertificate);
+
+        recycler.setHasFixedSize(false);
+        recycler.setLayoutManager(new LinearLayoutManager(v.getContext()));
+        recycler.setAdapter(adapter);
+
+        btnAdd.setOnClickListener(v1->{
+            String certTitle = tilCertTitle.getEditText().getText().toString().trim();
+            String certEvent = tilCertEvent.getEditText().getText().toString().trim();
+            String certYear = tilCertYr.getEditText().getText().toString().trim();
+
+            try{
+                //Check data
+                if(certTitle.isEmpty()){
+                    throw new Exception("No title");
+                }else if(certEvent.isEmpty()){
+                    throw new Exception("No title");
+                }else if(certYear.isEmpty()){
+                    throw new Exception("No title");
+                }
+
+                Certificate cert = new Certificate(certTitle,certEvent,certYear);
+
+                listOfCertificate.add(cert);
+                adapter.notifyDataSetChanged();
+            }catch (Exception ex){
+                ex.printStackTrace();
+                //Error here
+            }
+        });
+
         btnBack.setOnClickListener(v1 -> {
             _parent.getGigsFragment();
         });
@@ -98,7 +152,7 @@ public class CertificatesFragment extends Fragment {
         });
 
         btnSkip.setOnClickListener(v1 -> {
-            _parent.getVerificationFragment();
+            _parent.getCertificate(listOfCertificate);
         });
         return  v;
 
