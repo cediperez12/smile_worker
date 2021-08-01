@@ -16,15 +16,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.smile.worker.Models.PersonalInformation;
 import com.smile.worker.R;
 
 import butterknife.BindView;
@@ -38,9 +41,12 @@ public class MainNavigationActivity extends AppCompatActivity {
     ImageButton btnNotification;
     @BindView(R.id.lLayout_mainNav_viewProfile)
     LinearLayout lLayoutViewProfile;
+    @BindView(R.id.tvMainAct_fname)
+    TextView txtvFname;
 
     FirebaseAuth auth;
     DatabaseReference userDatabaseReference;
+    FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +57,12 @@ public class MainNavigationActivity extends AppCompatActivity {
 
         //Backend
         auth = FirebaseAuth.getInstance();
-        userDatabaseReference = FirebaseDatabase.getInstance().getReference("users");
+        currentUser = auth.getCurrentUser();
+        userDatabaseReference = FirebaseDatabase.getInstance()
+                .getReference("users").child(currentUser.getUid());
+
+        //Load worker profile
         userDatabaseReference
-                .child(auth.getCurrentUser().getUid())
                 .child("_worker_profile")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -71,6 +80,29 @@ public class MainNavigationActivity extends AppCompatActivity {
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 
+                    }
+                });
+
+        //Load personal information
+        userDatabaseReference
+                .child("_personal_information")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            PersonalInformation personalInfo =
+                                    snapshot.getValue(PersonalInformation.class);
+
+                            String fname = personalInfo.getFirst_name();
+                            String lname = personalInfo.getLast_name();
+
+                            txtvFname.setText(fname + ", " + lname);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        error.toException().printStackTrace();
                     }
                 });
 
