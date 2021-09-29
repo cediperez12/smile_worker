@@ -12,6 +12,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -28,7 +29,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.smile.worker.Models.PersonalInformation;
+import com.smile.worker.Models.Schedule;
 import com.smile.worker.R;
+
+import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -106,6 +111,21 @@ public class MainNavigationActivity extends AppCompatActivity {
                     }
                 });
 
+        //Load schedule
+        userDatabaseReference
+                .child("_schedule")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        //Fetch schedule.
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        error.toException().printStackTrace();
+                    }
+                });
+
         NavController navController = Navigation.findNavController(this, R.id.fragmentContainerView);
         NavigationUI.setupWithNavController(botNav, navController);
 
@@ -132,4 +152,10 @@ public class MainNavigationActivity extends AppCompatActivity {
 
     }
 
+    public void createNewSchedule(Schedule sched) {
+        userDatabaseReference
+                .child("_schedule")
+                .push()
+                .setValue(sched);
+    }
 }
