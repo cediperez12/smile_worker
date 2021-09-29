@@ -123,8 +123,8 @@ public class MainNavigationActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"CLICKED",Toast.LENGTH_SHORT).show();
 
                 //Temporary
-                auth.signOut();
-                Intent intent = new Intent(v.getContext(),WelcomeActivity.class);
+                //auth.signOut();
+                Intent intent = new Intent(v.getContext(),WorkerProfileActivity.class);
                 startActivity(intent);
                 finish();
             }
