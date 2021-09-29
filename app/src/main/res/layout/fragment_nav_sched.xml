@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".Fragments.Navigation.fragment_nav_sched">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,14 +12,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:padding="16dp"
         android:text="Schedule"
         android:textAppearance="@style/textStyle_title1"/>
 
 
     <RelativeLayout
+        android:id="@+id/rl_fr_sched_title"
         android:layout_below="@+id/tv_fr_MainSched"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -39,6 +41,12 @@
             android:textAppearance="@style/textStyle_captionBlue" />
 
     </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_fr_nav_sched"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_fr_sched_title"/>
 
 
 </RelativeLayout>
