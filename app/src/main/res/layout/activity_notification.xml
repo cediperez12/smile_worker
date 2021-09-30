@@ -55,7 +55,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="16dp"
         android:layout_below="@+id/btnBack_act_notification"
         android:layout_alignParentEnd="true"
@@ -67,8 +67,31 @@
             android:text="Notification"
             android:textAppearance="@style/textStyle_title1" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout_notif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed">
 
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabitem_notif_messages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MESSAGES"/>
 
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabitem_notif_work"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="WORK"/>
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <LinearLayout
+            android:id="@+id/lLayout_notif_fragment_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"/>
 
     </LinearLayout>
 
