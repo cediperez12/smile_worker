@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -20,6 +23,10 @@ public class NotificationActivity extends AppCompatActivity {
     TabLayout tablayout;
     @BindView(R.id.btnBack_act_notification)
     Button backButton;
+    @BindView(R.id.imageButtonNotif_profile)
+    ImageButton imgbNotifProf;
+    @BindView(R.id.tvNotif_viewProfile)
+    TextView txtvViewProf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +37,15 @@ public class NotificationActivity extends AppCompatActivity {
     }
 
     private void init(){
+        //Go to profile
+        imgbNotifProf.setOnClickListener(v->{
+            toProfile();
+        });
+
+        txtvViewProf.setOnClickListener(v->{
+            toProfile();
+        });
+
         //Setup back button
         backButton.setOnClickListener(v->{
             onBackPressed();
@@ -86,5 +102,10 @@ public class NotificationActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void toProfile(){
+        Intent intent = new Intent(this, WorkerProfileActivity.class);
+        startActivity(intent);
     }
 }
