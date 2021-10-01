@@ -48,4 +48,19 @@
         <item>2020</item>
         <item>2021</item>
     </string-array>
+
+<!--  Chat List Conversation  -->
+    <string-array name="sample_name">
+        <item>ArEy</item>
+        <item>CD</item>
+    </string-array>
+    <string-array name="sample_pic">
+        <item>1999</item>
+        <item>2000</item>
+    </string-array>
+    <string-array name="sample_displayConvo">
+        <item>Hey Bro where you at?</item>
+        <item>Im Here Sir!</item>
+    </string-array>
+
 </resources>

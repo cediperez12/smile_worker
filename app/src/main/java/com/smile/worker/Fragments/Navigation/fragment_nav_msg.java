@@ -3,11 +3,15 @@ package com.smile.worker.Fragments.Navigation;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.smile.worker.Adapter.ChatListAdapter;
 import com.smile.worker.R;
 
 /**
@@ -25,6 +29,12 @@ public class fragment_nav_msg extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+
+
+    String s1[],s2[];
+    int image[] = {R.drawable.arey_sample_pic_chat,R.drawable.cd_sample_pic_chat};
 
     public fragment_nav_msg() {
         // Required empty public constructor
@@ -61,6 +71,19 @@ public class fragment_nav_msg extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nav_chat, container, false);
+
+        View v = inflater.inflate(R.layout.fragment_nav_chat, container, false);
+        Toast.makeText(v.getContext(),"This is Chat Nav",Toast.LENGTH_SHORT).show();
+
+        RecyclerView recyclerView =  v.findViewById(R.id.recyclerView_fragment_nav_msg_chatList);
+
+        s1 = getResources().getStringArray(R.array.sample_name);
+        s2 = getResources().getStringArray(R.array.sample_displayConvo);
+
+        ChatListAdapter chatListAdapter = new ChatListAdapter(v.getContext(), s1,s2,image);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
+        recyclerView.setAdapter(chatListAdapter);
+        return v;
     }
 }
