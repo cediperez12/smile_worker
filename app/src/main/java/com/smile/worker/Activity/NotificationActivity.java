@@ -6,6 +6,7 @@ import butterknife.ButterKnife;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -17,6 +18,8 @@ public class NotificationActivity extends AppCompatActivity {
 
     @BindView(R.id.tablayout_notif)
     TabLayout tablayout;
+    @BindView(R.id.btnBack_act_notification)
+    Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,10 @@ public class NotificationActivity extends AppCompatActivity {
     }
 
     private void init(){
+        //Setup back button
+        backButton.setOnClickListener(v->{
+            onBackPressed();
+        });
 
         //Initial Tab
         getSupportFragmentManager()
