@@ -154,6 +154,12 @@
         <item name="android:textColor">@color/gray_7B8794</item>
     </style>
 
+    <style name="textStyle_SubcaptionBlack">
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/mulish_regular</item>
+        <item name="android:textColor">@color/black_323F4B</item>
+    </style>
+
 
     <!-- TextInputLayoutField Style -->
     <style name="textInputLayoutField_outline" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
