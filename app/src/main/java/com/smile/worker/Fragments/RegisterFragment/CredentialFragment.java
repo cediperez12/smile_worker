@@ -86,6 +86,12 @@ public class CredentialFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_credential, container, false);
         ButterKnife.bind(this,view);
 
+        _parent = (RegisterActivity)getContext();
+
+        btnBack.setOnClickListener(v->{
+            _parent.finish();
+        });
+
         btnNext.setOnClickListener(v->{
 
             String strEmail = tilEmail.getEditText().getText().toString().trim();
@@ -109,7 +115,6 @@ public class CredentialFragment extends Fragment {
                 UserCredential cred =
                         new UserCredential(strEmail,strPassword,strPhone);
 
-                _parent = (RegisterActivity)getContext();
                 _parent.fetchUserCredentials(cred);
 
                 Log.d("Credentials",cred.user_email + " " + cred.user_password);
