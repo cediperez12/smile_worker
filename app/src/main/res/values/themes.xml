@@ -90,7 +90,8 @@
     <!-- Button Text-Appearance Size 12sp Font Mulish-BOLD -->
     <style name="TxtApp_12">
         <item name="android:textSize">12sp</item>
-        <item name="fontFamily">@font/mulish_regular</item>
+        <item name="android:textColor">@color/black_323F4B</item>
+        <item name="android:letterSpacing">.2</item>
     </style>
 
 
@@ -152,6 +153,7 @@
         <item name="android:textSize">10sp</item>
         <item name="fontFamily">@font/mulish_regular</item>
         <item name="android:textColor">@color/gray_7B8794</item>
+
     </style>
 
     <style name="textStyle_SubcaptionBlack">
