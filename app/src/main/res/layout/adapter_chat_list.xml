@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -10,46 +11,73 @@
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
         app:cardCornerRadius="8dp"
-        app:cardElevation="16dp">
+        app:cardBackgroundColor="@color/white_F9F0F0"
+        app:cardElevation="22dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <Spinner
+        android:id="@+id/spinner_chat_list_more"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="right"
+        android:background="@drawable/outline_more_horiz_24"
+       />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:gravity="center"
             android:layout_height="wrap_content">
-            <ImageView
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imV_adapterChatList_profile"
-                android:layout_width="60dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="12dp"
                 android:src="@drawable/arey_sample_pic_chat"
-                android:layout_height="60dp"></ImageView>
+               />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                android:paddingLeft="8dp"
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/tv_adapterChatList_Name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/textStyle_title2"
-                    android:text="name"/>
+                    android:textAppearance="@style/TxtApp_12"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:layout_marginBottom="6dp"
+                    android:text="firstname, lastname"/>
                 <TextView
                     android:id="@+id/tv_adapterChatList_chatDisplay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/textStyle_SubcaptionBlack"
                     android:text="Text here"/>
-                <TextView
-                    android:id="@+id/tv_adapterChatList_chatDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="@style/textStyle_SubcaptionBlack"
-                    android:textAlignment="textEnd"
-                    android:text="Mon-9am May 11,2021"/>
+
             </LinearLayout>
         </LinearLayout>
-
+    <TextView
+        android:id="@+id/tv_adapterChatList_chatDate"
+        android:layout_width="match_parent"
+        android:layout_marginRight="6dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/textStyle_SubcaptionBlack"
+        android:textAlignment="textEnd"
+        android:layout_marginBottom="6dp"
+        android:text="Mon-9am May 11,2021"/>
+</LinearLayout>
 
 
     </androidx.cardview.widget.CardView>

@@ -4,13 +4,24 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.smile.worker.R;
+
+import java.lang.reflect.Array;
+
+import butterknife.ButterKnife;
+import butterknife.BindView;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHolder> {
 
@@ -30,6 +41,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.adapter_chat_list,parent,false);
+
         return new ViewHolder(view);
     }
 
@@ -38,6 +50,8 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
         holder.chat_name.setText(chat_name[position]);
         holder.chat_convoDisplay.setText(chat_display[position]);
         holder.imageView.setImageResource(images[position]);
+
+
     }
 
     @Override
@@ -45,16 +59,51 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
         return chat_name.length;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-
-        TextView chat_name,chat_convoDisplay;
-        ImageView imageView;
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+       @BindView(R.id.tv_adapterChatList_Name)
+       TextView chat_name;
+       @BindView(R.id.tv_adapterChatList_chatDisplay)
+       TextView chat_convoDisplay;
+       @BindView(R.id.imV_adapterChatList_profile)
+       CircleImageView imageView;
+        @BindView(R.id.spinner_chat_list_more)
+        Spinner moreSettings;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            chat_name = itemView.findViewById(R.id.tv_adapterChatList_Name);
-            chat_convoDisplay = itemView.findViewById(R.id.tv_adapterChatList_chatDisplay);
-            imageView = itemView.findViewById(R.id.imV_adapterChatList_profile);
+            ButterKnife.bind(this,itemView);
+
+
+            itemView.setOnClickListener(this);
+            ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(context.getApplicationContext(),
+                    android.R.layout.simple_list_item_1,
+                    moreSettings.getResources().getStringArray(R.array.more_settings));
+            spinAdapter.setDropDownViewResource(R.layout.spinner_more_settings);
+            moreSettings.setAdapter(spinAdapter);
+            moreSettings.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    String selected = moreSettings.getItemAtPosition(i).toString();
+                    Toast.makeText(context.getApplicationContext(), selected,Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+            });
+        }
+
+
+        @Override
+        public void onClick(View view) {
+
+
+            if (view == itemView){
+                Toast.makeText(context.getApplicationContext(), " Item: " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+            }
+
         }
     }
+
 }

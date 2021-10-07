@@ -54,9 +54,10 @@
         <item>ArEy</item>
         <item>CD</item>
     </string-array>
-    <string-array name="sample_pic">
-        <item>1999</item>
-        <item>2000</item>
+    <string-array name="more_settings">
+        <item>View Profile</item>
+        <item>Mute</item>
+        <item>Delete</item>
     </string-array>
     <string-array name="sample_displayConvo">
         <item>Hey Bro where you at?</item>
