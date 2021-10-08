@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -106,6 +108,36 @@ public class PersonalInformationFragment extends Fragment {
 
     private void init(){
         _parent = (RegisterActivity)getContext();//Kuwa parent na act
+
+        //Personal Information
+        tilSpnDay.getEditText().addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                try{
+                    String text = editable.toString();
+
+                    if(!text.isEmpty()){
+                        int output = Integer.parseInt(text);
+
+                        if(output > 31 || output <= 0)
+                            throw new Exception();
+                    }
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                    tilSpnDay.getEditText().setText("");
+                }
+            }
+        });
 
         AutoCompleteTextView actMonth = (AutoCompleteTextView)tilMonth.getEditText(),
         actYear = (AutoCompleteTextView)tilSpnYear.getEditText();
