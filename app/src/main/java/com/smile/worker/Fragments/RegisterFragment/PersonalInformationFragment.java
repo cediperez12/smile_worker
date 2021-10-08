@@ -168,7 +168,7 @@ public class PersonalInformationFragment extends Fragment {
         });
 
         btnCancel.setOnClickListener(view->{
-            _parent.continueSignUp();
+            _parent.finish();
         });
     }
 
