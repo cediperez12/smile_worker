@@ -23,6 +23,8 @@ public class FirstRegisterFragment extends Fragment {
 
     @BindView(R.id.register_btn_continue)
     Button btnContinue;
+    @BindView(R.id.register_btn_cancel)
+    Button btnCancel;
 
     private RegisterActivity _parent;
 
@@ -79,6 +81,10 @@ public class FirstRegisterFragment extends Fragment {
         btnContinue.setOnClickListener(view->{
             //Change into personal fragment.
             _parent.continueSignUp();
+        });
+
+        btnCancel.setOnClickListener(view->{
+            _parent.finish();
         });
 
         return v;
