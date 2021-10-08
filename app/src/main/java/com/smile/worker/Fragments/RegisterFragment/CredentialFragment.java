@@ -115,7 +115,7 @@ public class CredentialFragment extends Fragment {
                 UserCredential cred =
                         new UserCredential(strEmail,strPassword,strPhone);
 
-                _parent.fetchUserCredentials(cred);
+                _parent.fetchUserCredentials(cred, btnNext, btnBack);
 
                 Log.d("Credentials",cred.user_email + " " + cred.user_password);
             }catch (Exception e){
