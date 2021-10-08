@@ -104,11 +104,11 @@ public class RegisterActivity extends AppCompatActivity {
         return false;
     }
 
-    public boolean fetchUserCredentials(UserCredential cred){
+    public boolean fetchUserCredentials(UserCredential cred, Button next, Button cancel){
         //fetch data
         this._credentials = cred;
         //go to last fragment
-        createNewUser();
+        createNewUser(next, cancel);
         return true;
     }
 
@@ -159,7 +159,10 @@ public class RegisterActivity extends AppCompatActivity {
                 });
     }
 
-    private void createNewUser(){
+    private void createNewUser(Button btnNext, Button btnCancel){
+        btnNext.setEnabled(false);
+        btnCancel.setEnabled(false);
+
         auth.createUserWithEmailAndPassword(_credentials.user_email,_credentials.user_password)
                 .addOnSuccessListener(task->{
                     FirebaseUser newUser = task.getUser();
@@ -183,10 +186,28 @@ public class RegisterActivity extends AppCompatActivity {
                             .addOnFailureListener(ex->{
                                 ex.printStackTrace();
                                 //fails
+                                new MaterialAlertDialogBuilder(RegisterActivity.this)
+                                        .setTitle("Warning")
+                                        .setMessage(ex.getMessage())
+                                        .setPositiveButton("Okay", null)
+                                        .create()
+                                        .show();
+
+                                btnNext.setEnabled(true);
+                                btnCancel.setEnabled(true);
                             });
                 })
                 .addOnFailureListener(ex->{
                     ex.printStackTrace();
+                    new MaterialAlertDialogBuilder(RegisterActivity.this)
+                            .setTitle("Warning")
+                            .setMessage(ex.getMessage())
+                            .setPositiveButton("Okay", null)
+                            .create()
+                            .show();
+
+                    btnNext.setEnabled(true);
+                    btnCancel.setEnabled(true);
                 });
     }
 }
