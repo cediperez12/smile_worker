@@ -1,13 +1,23 @@
 package com.smile.worker.Fragments.Navigation;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.smile.worker.Activity.MainNavigationActivity;
+import com.smile.worker.Activity.MapActivity;
 import com.smile.worker.R;
 
 /**
@@ -15,7 +25,10 @@ import com.smile.worker.R;
  * Use the {@link fragment_nav_map#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_nav_map extends Fragment {
+public class fragment_nav_map extends Fragment{
+
+    private GoogleMap googleMap;
+    private MainNavigationActivity _parent;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +74,13 @@ public class fragment_nav_map extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nav_map, container, false);
+        View v = inflater.inflate(R.layout.fragment_nav_map, container, false);
+
+        _parent = (MainNavigationActivity) v.getContext();
+
+        Intent intent = new Intent(v.getContext(),MapActivity.class);
+        _parent.startActivity(intent);
+
+        return v;
     }
 }

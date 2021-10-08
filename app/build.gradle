@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -51,4 +52,7 @@ dependencies {
 
     //ImageView Circle
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Google Map
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
 }
