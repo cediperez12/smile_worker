@@ -29,7 +29,11 @@
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/adapter_schedule_list.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/fragment_nav_chat.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/spinner_more_settings.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/fragment_first_register.xml" value="0.18704710144927536" />
+        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/activity_main_navigation.xml" value="0.2234375" />
+        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/activity_map.xml" value="0.1" />
+        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/fragment_first_register.xml" value="0.4" />
+        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/fragment_nav_map.xml" value="0.264" />
+        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/fragment_nav_reports.xml" value="0.103125" />
       </map>
     </option>
   </component>

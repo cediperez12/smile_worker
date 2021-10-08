@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Worker">
-        <activity android:name=".Activity.WorkerProfileActivity"></activity>
+        <activity
+            android:name=".Activity.MapActivity"
+            android:exported="true" />
+        <activity android:name=".Activity.WorkerProfileActivity" />
         <activity android:name=".Activity.NotificationActivity" />
         <activity android:name=".Activity.MainNavigationActivity" />
         <activity android:name=".Activity.SetupWorkerProfileActivity" />
@@ -22,6 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBC7PXLq_XFTREU2_MlFVslg6TG0DBk0d0" />
     </application>
 
 </manifest>
