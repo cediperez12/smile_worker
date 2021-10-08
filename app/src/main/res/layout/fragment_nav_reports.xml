@@ -3,15 +3,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Fragments.Navigation.fragment_nav_reports">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Reports"
-        android:textAppearance="@style/textStyle_title1"/>
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Reports"
+            android:textAppearance="@style/textStyle_title1"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fr_nav_report_til_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Month"
+            style="@style/textInputLayout_dropDown">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="JOB/WORK"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/blue_2F80ED"/>
+
+            <TextView
+                android:id="@+id/fr_nav_report_txtv_jobs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="10"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/blue_2F80ED"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="INCOME"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/green_219553"/>
+
+            <TextView
+                android:id="@+id/fr_nav_report_txtv_income"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="P 11,842.00"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/green_219553"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
