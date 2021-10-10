@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="bottom"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imv_adapterChatConversation_Cprofile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+            android:layout_gravity="center"
+        android:layout_marginLeft="12dp"
+        android:src="@drawable/arey_sample_pic_chat"
+        />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_adapterChatConversation_Cname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TxtApp_12"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:layout_marginBottom="6dp"
+                android:text="firstname, lastname"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:background="@drawable/blue_corner_shape"
+                android:padding="8dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_adapterChatConversation_Ccontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/textField_outline16"
+                    android:textColor="@color/white_F9F0F0"
+                    android:text="Hello Sir!, What time?"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_adapterChatConversation_Cdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/textStyle_SubcaptionBlack"
+                android:textAllCaps="true"
+                android:letterSpacing=".2"
+                android:layout_marginBottom="6dp"
+                android:text="MON-9am may 14, 2021"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="12dp"
+        android:layout_gravity="right"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_adapterChatConversation_Yname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TxtApp_12"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:layout_gravity="right"
+                android:layout_marginBottom="6dp"
+                android:text="You"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:background="@drawable/blue_stroke_corner_shape"
+                android:padding="8dp"
+                android:layout_gravity="right"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_adapterChatConversation_Ycontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/textField_outline16"
+                    android:textColor="@color/black_323F4B"
+                    android:text="How are you guys"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_adapterChatConversation_Ydate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textAppearance="@style/textStyle_SubcaptionBlack"
+                android:textAllCaps="true"
+                android:letterSpacing=".2"
+                android:layout_marginBottom="6dp"
+                android:text="MON-9am may 14, 2021"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

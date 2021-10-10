@@ -70,6 +70,11 @@
         <item name="cornerRadius">10dp</item>
         <item name="android:textColor">@color/white_FFFFFF</item>
     </style>
+    <style name="button_fillFont10" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundColor">@color/blue_2F80ED</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textColor">@color/white_FFFFFF</item>
+    </style>
     <!-- Button Style White Background, Blue Text-Color -->
     <style name="button_fill_transparent" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="backgroundTint">@color/transparent</item>
@@ -161,6 +166,11 @@
         <item name="fontFamily">@font/mulish_regular</item>
         <item name="android:textColor">@color/black_323F4B</item>
     </style>
+    <style name="textStyle_SubcaptionBlack8">
+        <item name="android:textSize">8sp</item>
+        <item name="fontFamily">@font/mulish_regular</item>
+        <item name="android:textColor">@color/black_323F4B</item>
+    </style>
 
 
     <!-- TextInputLayoutField Style -->
@@ -174,10 +184,17 @@
         <item name="boxCornerRadiusTopEnd">8dp</item>
         <item name="boxStrokeColor">@color/tf_stroke_color_changer</item>
     </style>
+
+
     <!-- TextField TextAppearance -->
     <style name="textField_outline" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:textSize">16sp</item>
         <item name="fontFamily">@font/mulish_bold</item>
+    </style>
+
+    <style name="textField_outline16" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/mulish_regular</item>
     </style>
 
     <style name="textInputLayout_dropDown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
