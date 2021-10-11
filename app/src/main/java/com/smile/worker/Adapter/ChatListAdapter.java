@@ -1,6 +1,7 @@
 package com.smile.worker.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.smile.worker.Activity.ChatConversationActivity;
 import com.smile.worker.R;
 
 import java.lang.reflect.Array;
@@ -101,6 +103,9 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
 
             if (view == itemView){
                 Toast.makeText(context.getApplicationContext(), " Item: " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+                Intent start = new Intent(context.getApplicationContext(), ChatConversationActivity.class);
+                context.startActivity(start);
+
             }
 
         }

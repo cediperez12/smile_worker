@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ChatConversationActivity">
+
+    <Button
+        android:id="@+id/btnBack_act_chatConversation"
+        style="@style/button_fill_transparent"
+        android:layout_width="108dp"
+        android:layout_height="64dp"
+        android:text="Back"
+        android:textAppearance="@style/buttonTxtApp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imV_chatConversation_chatProfile"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/arey_sample_pic_chat"
+        />
+
+    <TextView
+        android:id="@+id/tv_chatConversation_nameProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TxtApp_12"
+        android:layout_marginTop="6dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textAllCaps="true"
+        android:layout_marginBottom="6dp"
+        android:text="firstname, lastname"/>
+
+    <Button
+        style="@style/button_fillFont10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white_FFFFFF"
+        android:text="VIEW PROFILE"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:letterSpacing=".3"
+        android:backgroundTint="@color/blue_2F80ED"
+        android:textAppearance="@style/textStyle_SubcaptionBlack8" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfSearch_act_chatConversation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:hint="Search "
+        app:startIconDrawable="@drawable/ic_baseline_search_24"
+        app:startIconTint="@color/tf_stroke_color_changer"
+        style="@style/textInputLayoutField_outline">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/textField_outline"
+            android:textColor="@color/black_323F4B" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_act_chatConversation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white_FFFFFF" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="bottom">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            >
+
+            <ImageButton
+                android:id="@+id/btn_chat_conversation_moreBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white_FFFFFF"
+                android:layout_gravity="center"
+                android:src="@drawable/outline_more_vert_24"/>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/textInputLayoutField_outline"
+                android:id="@+id/txtInputLayout_chatConversation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_F9F0F0"
+                android:hint="Message ... "
+                app:hintTextColor="@color/gray_7B8794"
+                android:layout_gravity="center">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/autoCompleteTV_chatConversation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="8dp"
+                    android:drawableEnd="@drawable/outline_send_24"
+                    android:paddingRight="9dp"
+                    android:drawablePadding="8dp"
+                    android:textAppearance="@style/textField_outline"
+                    android:textColor="@color/black_323F4B" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Llayout_act_chat_conversation_more"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="6dp"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white_FFFFFF"
+                android:layout_gravity="center"
+                android:src="@drawable/outline_schedule_send_24"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white_FFFFFF"
+                android:layout_gravity="center"
+                android:src="@drawable/outline_photo_camera_24"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white_FFFFFF"
+                android:layout_gravity="center"
+                android:src="@drawable/outline_collections_24"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
