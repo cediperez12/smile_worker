@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.ViewScheduleActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/view_sched_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            style="@style/button_fill_transparent"
+            android:text="Back"/>
+
+        <Button
+            android:id="@+id/view_sched_btn_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:text="Report"
+            android:textColor="@color/red_ED7F7F"
+            style="@style/button_fill_transparent"/>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/white_F9F0F0"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/view_sched_txtv_customer_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CUSTOMER: FIRSTNAME, LASTNAME"
+                    android:textAppearance="@style/textStyle_captionBlack"/>
+
+                <TextView
+                    android:id="@+id/view_sched_txtv_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/textStyle_captionBlue"
+                    android:textStyle="bold"
+                    android:textAlignment="textEnd"
+                    android:text="PENDING"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/view_sched_txtv_gig_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carpantry - Repair Cabinet"
+                android:textAppearance="@style/textStyle_title2"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RATE"
+                        android:textAppearance="@style/textStyle_captionBlack"/>
+
+                    <Button
+                        android:id="@+id/view_sched_btn_rate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/button_outline"
+                        android:text="400.000"
+                        android:padding="16dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FARE"
+                        android:textAppearance="@style/textStyle_captionBlack"/>
+
+                    <Button
+                        android:id="@+id/view_sched_btn_fare"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/button_outline"
+                        android:text="400.000"
+                        android:padding="16dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/view_sched_txtv_loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/textStyle_captionBlue"
+                android:textAllCaps="true"
+                android:text="location: house no.. st.."/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue_2F80ED"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/view_sched_txtv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/textStyle_captionBlue"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:text="mon 9AM, MAY 14, 2021"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--TODO add step view in this part-->
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/view_sched_btn_cancel_job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            style="@style/button_fill_transparent"
+            android:textColor="@color/red_ED7F7F"
+            android:text="Cancel Job"/>
+
+        <Button
+            android:id="@+id/view_sched_btn_send_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:text="Send Agreement"
+            android:padding="16dp"
+            style="@style/button_fill"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

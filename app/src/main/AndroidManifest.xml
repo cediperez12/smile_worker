@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Worker">
         <activity
+            android:name=".Activity.ViewScheduleActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.ChatConversationActivity"
             android:exported="true" />
         <activity
