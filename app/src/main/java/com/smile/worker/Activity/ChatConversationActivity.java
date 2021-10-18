@@ -19,6 +19,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.smile.worker.Adapter.ChatConversationAdapter;
 import com.smile.worker.R;
 
@@ -40,6 +41,8 @@ public class ChatConversationActivity extends AppCompatActivity {
 
     @BindView(R.id.btnBack_act_chatConversation)
     Button btnBack_act_chatConversation;
+
+    private BottomSheetBehavior bottomSheet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,13 +89,24 @@ public class ChatConversationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
-
             }
         });
+
+        setupBottomSheet();
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void setupBottomSheet(){
+        bottomSheet = BottomSheetBehavior.from(findViewById(R.id.card_chat_convo_bottomsheet));
+        bottomSheet.setHideable(true);
+        bottomSheet.setState(BottomSheetBehavior.STATE_HIDDEN);
+    }
+
+    public void OpenBottomSheet(View view) {
+        bottomSheet.setState(BottomSheetBehavior.STATE_COLLAPSED);
     }
 }
