@@ -330,6 +330,14 @@
 
             </LinearLayout>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:text="Confirm"
+                android:textColor="@color/white_F9F0F0"/>
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
