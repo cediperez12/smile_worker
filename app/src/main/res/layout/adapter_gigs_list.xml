@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/white_FFFFFF"
+        app:cardElevation="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue_2F80ED"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TxtApp_12"
+                    android:layout_gravity="center"
+                    android:text="Edit"/>
+
+                <ImageButton
+                    android:id="@+id/imgBtn_adapterGigsList_btnEditGigs"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/outline_edit_note_24"
+                    android:background="@color/white_FFFFFF"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:src="@drawable/outline_business_center_24"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_adapterGigsList_TitleGigs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carpantry - Repair  Cabinet"
+                        android:textAppearance="@style/textStyle_title2"/>
+                    <TextView
+                        android:id="@+id/tv_adapterGigsList_GigsDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carpantry - Repair  Cabinet"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/textStyle_SubcaptionGray"/>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginRight="22dp"
+                android:layout_height="1dp"
+                android:background="@color/gray_7B8794"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                android:letterSpacing=".2"
+                android:text="Rate"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TxtApp_16"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:src="@drawable/outline_business_center_24"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"/>
+
+                <TextView
+                    android:id="@+id/tv_adapterGigsList_GigsRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="4dp"
+                    android:letterSpacing=".2"
+                    android:text="400.00"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TxtApp_16"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

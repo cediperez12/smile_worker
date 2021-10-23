@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_marginRight="16dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_height="35dp"
+        android:src="@drawable/baseline_school_24"
+        app:tint="@color/black_323F4B" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_adapterViewWorker_ItemEduc"
+            android:layout_width="wrap_content"
+            android:textColor="@color/blue_2F80ED"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TxtApp_16"
+            android:text="Degree"/>
+        <TextView
+            android:id="@+id/tv_adapterViewWorker_ItemEducDesc"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black_323F4B"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textAppearance="@style/TxtApp_12"
+            android:text="School Name"/>
+        <TextView
+            android:id="@+id/tv_adapterViewWorker_ItemEducYr"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black_323F4B"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textAppearance="@style/textStyle_SubcaptionBlack"
+            android:text="YR. 2021"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

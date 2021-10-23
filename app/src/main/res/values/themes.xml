@@ -90,6 +90,7 @@
     <style name="TxtApp_16">
         <item name="android:textSize">16sp</item>
         <item name="fontFamily">@font/mulish_bold</item>
+        <item name="android:textColor">@color/black_323F4B</item>
     </style>
 
     <!-- Button Text-Appearance Size 12sp Font Mulish-BOLD -->
@@ -149,6 +150,12 @@
     <style name="textStyle_captionBlack">
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/mulish_regular</item>
+        <item name="android:textColor">@color/black_323F4B</item>
+    </style>
+    <style name="textStyle_tabTitleStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/mulish_regular</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/black_323F4B</item>
     </style>
     <!-- END: Text Size 14sp-->
