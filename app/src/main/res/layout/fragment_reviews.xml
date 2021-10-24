@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.WorkerProfileFragments.ReviewsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_fragmentViewAllReviews"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_fragmentReviews_Rate_actWorker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="6dp"
+            android:letterSpacing=".2"
+            android:text="Customer Reviews"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TxtApp_16"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/simpleRatingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="false"
+                android:numStars="5"
+                android:progressTint="@color/yellow_FEC520"
+                android:rating="4.5"
+                android:transformPivotX="2dp"
+                android:transformPivotY="0dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="6dp"
+                android:letterSpacing=".2"
+                android:text="4.5 out of 5"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TxtApp_12" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="6dp"
+            android:letterSpacing=".2"
+            android:text="(72) Total Ratings"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TxtApp_12" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_fragment_reviews_List"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_FFFFFF" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_fragmentViewAllReviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="right"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:letterSpacing=".1"
+        android:linksClickable="true"
+        android:text="@string/view_all_reviews"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TxtApp_12"
+        android:textColor="@color/blue_2F80ED" />
+
+</RelativeLayout>
