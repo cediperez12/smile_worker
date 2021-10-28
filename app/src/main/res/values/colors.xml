@@ -12,6 +12,8 @@
 
     <color name="yellow_FEC520">#FEC520</color>
 
+    <color name="yellowFade_FEC520">#ffeebc</color>
+
     <color name="gray_7B8794">#7B8794</color>
 
     <color name="green_219553">#219553</color>
@@ -19,6 +21,10 @@
     <color name="blue_green_5ACFD6">#5ACFD6</color>
 
     <color name="lightblue_69BAF4">#69BAF4</color>
+
+    <color name="strongblue_189BFA">#189BFA</color>
+
+    <color name="fadeblue_69BAF4">#B9D1F2</color>
 
     <color name="pink_ED7F7F">#ED7F7F</color>
     <color name="transparent">#00FFFFFF</color>

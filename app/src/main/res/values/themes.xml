@@ -215,4 +215,24 @@
 
     </style>
 
+    <style name="chipStyleStar" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="android:textColor">@drawable/chip_star_selected_font_color</item>
+        <item name="chipBackgroundColor">@drawable/chip_star_selected_bg_color</item>
+        <item name="android:drawableEnd">@drawable/chip_star_selected_icon_color</item>
+        <item name="checkedIconEnabled">false</item>
+        <item name="checkedIcon">@null</item>
+    </style>
+
+    <style name="chipStyleCat" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@drawable/chip_cat_selected_bg_color</item>
+        <item name="android:textAppearance">@style/textStyle_captionBlack</item>
+        <item name="android:letterSpacing">.2</item>
+        <item name="android:textStyle">bold</item>
+        <item name="checkedIconEnabled">false</item>
+        <item name="chipStrokeWidth">2dp</item>
+        <item name="chipStrokeColor">@drawable/chip_cat_selected_stroke_color</item>
+        <item name="checkedIcon">@null</item>
+        <item name="android:textColor">@color/white_FFFFFF</item>
+    </style>
+
 </resources>

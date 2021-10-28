@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.ViewAllReviewsActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/blue_bottom_corner"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnBack_act_viewAllReviews"
+        style="@style/button_fill_transparent"
+        android:layout_width="128dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:text="BACK"
+        android:textAppearance="@style/buttonTxtApp"
+        android:textColor="@color/white_FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup_actViewAllReviews_cat"
+            android:layout_width="match_parent"
+            app:singleSelection="true"
+            android:layout_height="wrap_content">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_actViewAllReviews_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/chipStyleCat"
+                android:textAllCaps="true"
+                android:layout_marginLeft="21dp"
+                android:text="ALL"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_actViewAllReviews_possitive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/chipStyleCat"
+                android:layout_marginLeft="8dp"
+                android:textAllCaps="true"
+                android:text="Possitive"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_actViewAllReviews_critical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/chipStyleCat"
+                android:layout_marginLeft="8dp"
+                android:textAllCaps="true"
+                android:text="Critical"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup_actViewAllReviews_rate"
+        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.ChipGroup"
+        app:singleLine="true"
+        app:singleSelection="true"
+        android:layout_height="wrap_content">
+
+
+            <com.google.android.material.chip.Chip
+
+                android:id="@+id/chip_actViewAllReviews_5s"
+                style="@style/chipStyleStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textAllCaps="true"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_actViewAllReviews_4s"
+                style="@style/chipStyleStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textAllCaps="true"
+                 />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_actViewAllReviews_3s"
+                style="@style/chipStyleStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAllCaps="true"
+                 />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_actViewAllReviews_2s"
+                style="@style/chipStyleStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAllCaps="true" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_actViewAllReviews_1s"
+                style="@style/chipStyleStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textAllCaps="true" />
+
+
+
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="16dp"
+            android:text="5 Star"
+            android:textAppearance="@style/textStyle_captionBlue"/>
+        <ProgressBar
+            android:id="@+id/pb_actViewAllReviews_5sbar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="16dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/custom_design_progress_bar"
+            android:progress="100"
+            />
+
+        <TextView
+            android:id="@+id/tv_actViewAllReviews_5sPercentage"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="21dp"
+            android:layout_marginLeft="16dp"
+            android:text="100%"
+            android:textAppearance="@style/textStyle_captionBlack"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="16dp"
+            android:text="4 Star"
+            android:textAppearance="@style/textStyle_captionBlue"/>
+        <ProgressBar
+            android:id="@+id/pb_actViewAllReviews_4sbar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="16dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/custom_design_progress_bar"
+            android:progress="56"
+            />
+
+<!--        android:progressTint="@color/yellow_FEC520"-->
+<!--        android:progressBackgroundTint="@color/yellow_FEC520"-->
+
+        <TextView
+            android:id="@+id/tv_actViewAllReviews_4sPercentage"
+            android:gravity="right"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="21dp"
+            android:layout_marginLeft="16dp"
+            android:text="56%"
+            android:textAppearance="@style/textStyle_captionBlack"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="16dp"
+            android:text="3 Star"
+            android:textAppearance="@style/textStyle_captionBlue"/>
+        <ProgressBar
+            android:id="@+id/pb_actViewAllReviews_3sbar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="16dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/custom_design_progress_bar"
+            android:progress="30"
+            />
+
+        <TextView
+            android:id="@+id/tv_actViewAllReviews_3sPercentage"
+            android:gravity="right"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="21dp"
+            android:layout_marginLeft="16dp"
+            android:text="30%"
+            android:textAppearance="@style/textStyle_captionBlack"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="16dp"
+            android:text="2 Star"
+            android:textAppearance="@style/textStyle_captionBlue"/>
+        <ProgressBar
+            android:id="@+id/pb_actViewAllReviews_2sbar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="16dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/custom_design_progress_bar"
+            android:progress="10"
+            />
+
+        <TextView
+            android:id="@+id/tv_actViewAllReviews_2sPercentage"
+            android:gravity="right"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="21dp"
+            android:layout_marginLeft="16dp"
+            android:text="10%"
+            android:textAppearance="@style/textStyle_captionBlack"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="16dp"
+            android:text="1 Star"
+            android:textAppearance="@style/textStyle_captionBlue"/>
+        <ProgressBar
+            android:id="@+id/pb_actViewAllReviews_1sbar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="16dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/custom_design_progress_bar"
+            android:progress="0"
+            />
+
+        <TextView
+            android:id="@+id/tv_actViewAllReviews_1sPercentage"
+            android:gravity="right"
+            android:layout_width="37dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="21dp"
+            android:layout_marginLeft="16dp"
+            android:text="0%"
+            android:textAppearance="@style/textStyle_captionBlack"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_gravity="right"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="Most recent"
+            android:layout_marginRight="4dp"
+            android:textAppearance="@style/textStyle_SubcaptionBlack"/>
+        <ImageButton
+            android:id="@+id/imgbtn_actViewAllReviews_sortReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/outline_filter_list_24"
+            android:background="@color/white_FFFFFF"
+            />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/act_viewAll_reviews_recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+</LinearLayout>
