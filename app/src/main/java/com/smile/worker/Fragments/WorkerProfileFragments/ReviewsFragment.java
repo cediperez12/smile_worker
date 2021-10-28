@@ -1,5 +1,6 @@
 package com.smile.worker.Fragments.WorkerProfileFragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,22 +11,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.smile.worker.Activity.ViewAllReviewsActivity;
 import com.smile.worker.Adapter.ChatListAdapter;
 import com.smile.worker.Adapter.ReviewsListAdapter;
 import com.smile.worker.R;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ReviewsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ReviewsFragment extends Fragment {
+public class ReviewsFragment extends Fragment implements View.OnClickListener {
 
-
+@BindView(R.id.tv_fragmentViewAllReviews)
+    TextView tv_fragmentViewAllReviews;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -75,7 +80,7 @@ public class ReviewsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_reviews, container, false);
-
+        ButterKnife.bind(this,v);
         RecyclerView recyclerView =  v.findViewById(R.id.recyclerView_fragment_reviews_List);
 
         s1 = getResources().getStringArray(R.array.sample_name);
@@ -85,6 +90,24 @@ public class ReviewsFragment extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
         recyclerView.setAdapter(reviewsListAdapter);
+
+        tv_fragmentViewAllReviews.setOnClickListener(this);
+
+
+
+
         return v;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.tv_fragmentViewAllReviews:
+                Toast.makeText(getActivity(), "View All", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(view.getContext(), ViewAllReviewsActivity.class);
+                startActivity(intent);
+                break;
+
+        }
     }
 }

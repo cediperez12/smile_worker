@@ -10,7 +10,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -38,9 +41,21 @@ Toolbar act_worker_toolbar;
 @BindView(R.id.act_worker_profile_tabLayout)
     TabLayout act_worker_profile_tabLayout;
 
+@BindView(R.id.btnBack_act_workerSetup)
+    Button btnBack_act_workerSetup;
+
 private ReviewsFragment reviewsFragment;
 private WorkerProfileFragment workerProfileFragment;
 private GigsWorkerFragment gigsWorkerFragment;
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), MainNavigationActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +107,18 @@ private GigsWorkerFragment gigsWorkerFragment;
                 Toast.makeText(getApplicationContext(),stepView_verification.getCurrentStep()+ "", Toast.LENGTH_SHORT).show();
             }
         });
+
+        btnBack_act_workerSetup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(getSupportFragmentManager().getBackStackEntryCount() > 0)
+                    getSupportFragmentManager().popBackStack();
+                else
+                    onBackPressed();
+            }
+        });
+
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
