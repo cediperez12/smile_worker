@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/btnBack_act_notification"
-        style="@style/button_fill_transparent"
+        style="@style/button_fill_transparent_blueText"
         android:layout_width="108dp"
         android:layout_height="64dp"
         android:layout_alignParentStart="true"
@@ -20,7 +20,7 @@
 
     <ImageButton
         android:id="@+id/imageButtonNotif_profile"
-        style="@style/button_fill_transparent"
+        style="@style/button_fill_transparent_blueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toStartOf="@+id/lLayout_notif_viewProfile"

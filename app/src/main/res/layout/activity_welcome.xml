@@ -57,7 +57,7 @@
         <com.google.android.material.button.MaterialButton
             app:icon="@drawable/outline_smartphone_24"
             android:id="@+id/welcome_btn_use_phone"
-            style="@style/button_outline"
+            style="@style/button_outline_blueStroke"
             android:layout_width="256dp"
             android:layout_height="56dp"
             android:text="Use phone or email"
@@ -66,7 +66,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/welcome_btn_use_with_google"
             app:icon="@drawable/icons_google"
-            style="@style/button_outline"
+            style="@style/button_outline_blueStroke"
             android:layout_width="256dp"
             android:layout_height="56dp"
             android:text="Login with google"

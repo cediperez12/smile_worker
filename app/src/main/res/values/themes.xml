@@ -38,8 +38,15 @@
 
 
     <!-- Button outLinedBox Color Blue/Primary Stroke -->
-    <style name="button_outline" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="button_outline_blueStroke" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="strokeColor">@color/blue_2F80ED</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:textColor">@color/blue_2F80ED</item>
+    </style>
+
+    <style name="button_outline_whiteStroke" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/white_FFFFFF</item>
         <item name="strokeWidth">2dp</item>
         <item name="cornerRadius">10dp</item>
         <item name="android:textColor">@color/blue_2F80ED</item>
@@ -76,9 +83,13 @@
         <item name="android:textColor">@color/white_FFFFFF</item>
     </style>
     <!-- Button Style White Background, Blue Text-Color -->
-    <style name="button_fill_transparent" parent="Widget.MaterialComponents.Button.TextButton">
+    <style name="button_fill_transparent_blueText" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="backgroundTint">@color/transparent</item>
         <item name="android:textColor">@color/blue_2F80ED</item>
+    </style>
+    <style name="button_fill_transparent_whiteText" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="backgroundTint">@color/transparent</item>
+        <item name="android:textColor">@color/white_FFFFFF</item>
     </style>
     <!-- Button Text-Appearance Size 15sp Font Mulish-BOLD -->
     <style name="buttonTxtApp" parent="TextAppearance.MaterialComponents.Button">
@@ -192,6 +203,21 @@
         <item name="boxStrokeColor">@color/tf_stroke_color_changer</item>
     </style>
 
+    <style name="textInputLayoutField_outline_whiteBG" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeWidthFocused">3dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxStrokeColor">@color/tf_stroke_color_changer</item>
+    </style>
+
+    <style name="textField_outline_whiteBG" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/mulish_bold</item>
+    </style>
 
     <!-- TextField TextAppearance -->
     <style name="textField_outline" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">

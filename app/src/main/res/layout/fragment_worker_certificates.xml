@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:textAppearance="@style/buttonTxtApp"
-        style="@style/button_fill_transparent"
+        style="@style/button_fill_transparent_blueText"
         android:text="Skip"/>
 
     <LinearLayout
@@ -141,7 +141,7 @@
             android:layout_width="128dp"
             android:layout_height="64dp"
             android:textAppearance="@style/buttonTxtApp"
-            style="@style/button_fill_transparent"
+            style="@style/button_fill_transparent_blueText"
             android:text="BACK"/>
 
         <Button
