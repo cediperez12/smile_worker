@@ -2,6 +2,8 @@ package com.smile.worker.Fragments.Navigation;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,8 +13,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.smile.worker.Adapter.ChatListAdapter;
 import com.smile.worker.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,11 +45,19 @@ public class fragment_nav_msg extends Fragment {
     private String mParam1;
     private String mParam2;
 
-
-
+    @BindView(R.id.recyclerView_fragment_nav_msg_chatList)
+    RecyclerView recyclerView;
 
     String s1[],s2[];
     int image[] = {R.drawable.arey_sample_pic_chat,R.drawable.cd_sample_pic_chat};
+
+    private DatabaseReference userConversation;
+    private FirebaseUser curr_user;
+
+    private static final String USERS = "users";
+    private static final String CONVERSATIONS = "_conversations";
+
+    private List<DataSnapshot> data;
 
     public fragment_nav_msg() {
         // Required empty public constructor
@@ -71,19 +94,60 @@ public class fragment_nav_msg extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View v = inflater.inflate(R.layout.fragment_nav_chat, container, false);
-        Toast.makeText(v.getContext(),"This is Chat Nav",Toast.LENGTH_SHORT).show();
+        ButterKnife.bind(this,v);
 
-        RecyclerView recyclerView =  v.findViewById(R.id.recyclerView_fragment_nav_msg_chatList);
+        init(v);
 
-        s1 = getResources().getStringArray(R.array.sample_name);
-        s2 = getResources().getStringArray(R.array.sample_displayConvo);
-
-        ChatListAdapter chatListAdapter = new ChatListAdapter(v.getContext(), s1,s2,image);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
-        recyclerView.setAdapter(chatListAdapter);
         return v;
+    }
+
+    private void init(View v) {
+        curr_user = FirebaseAuth.getInstance().getCurrentUser();
+
+        //Setup data and adapter
+        data = new ArrayList<>();
+        ChatListAdapter adapter = new ChatListAdapter(data);
+
+        //Setup recyclerView
+        LinearLayoutManager layoutManager = new LinearLayoutManager(v.getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(adapter);
+
+        //Fetch user Conversations
+        userConversation =
+                FirebaseDatabase.getInstance()
+                .getReference(USERS)
+                .child(curr_user.getUid())
+                .child(CONVERSATIONS);
+
+        userConversation.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                data.add(snapshot);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

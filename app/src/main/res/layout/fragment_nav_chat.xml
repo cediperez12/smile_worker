@@ -5,27 +5,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
     android:background="@color/white_FFFFFF"
     tools:context=".Fragments.Navigation.fragment_nav_msg">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <TextView
-        android:id="@+id/tv_fr_MainChat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="Chat"
-        android:textAppearance="@style/textStyle_title1"/>
-
 
     <LinearLayout
         android:layout_below="@+id/tv_fr_MainChat"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content"
-        >
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/tv_fr_MainChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="Chat"
+            android:textAppearance="@style/textStyle_title1"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,11 +34,12 @@
             android:textStyle="bold"
             android:text="Messages"
             android:textAppearance="@style/textStyle_captionBlack" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tfSearch_fr_mainAct_Chat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="4dp"
             android:hint="Search "
             app:startIconDrawable="@drawable/ic_baseline_search_24"
             app:startIconTint="@color/tf_stroke_color_changer"
