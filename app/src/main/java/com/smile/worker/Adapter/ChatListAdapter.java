@@ -2,6 +2,7 @@ package com.smile.worker.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,21 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.smile.worker.Activity.ChatConversationActivity;
 import com.smile.worker.R;
 
 import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 import butterknife.ButterKnife;
 import butterknife.BindView;
@@ -31,6 +43,29 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
     int images[];
     Context context;
 
+    private List<DataSnapshot> data;
+
+    private FirebaseUser curr_user;
+    private DatabaseReference conversationReference;
+    private DatabaseReference customerReference;
+    private SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy hh:mm aa");
+
+    private static final String USERS = "users";
+    private static final String USERS_CONVERSATIONS = "_conversations";
+    private static final String CONVERSATION = "conversations";
+    private static final String CUSTOMER = "customer";
+    private static final String MESSAGES = "_messages";
+    private static final String MESSAGE= "message";
+    private static final String FIRST_NAME = "_personal_information/first_name";
+    private static final String LAST_NAME = "_personal_information/last_name";
+    private static final String MESSAGE_DATE_SENT = "dateSent";
+
+    public ChatListAdapter(List<DataSnapshot> data) {
+        this.data = data;
+
+        curr_user = FirebaseAuth.getInstance().getCurrentUser();
+    }
+
     public ChatListAdapter(Context ct, String s1[], String s2[], int img[]){
         context = ct;
         chat_name = s1;
@@ -41,7 +76,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.adapter_chat_list,parent,false);
 
         return new ViewHolder(view);
@@ -49,66 +84,112 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.chat_name.setText(chat_name[position]);
-        holder.chat_convoDisplay.setText(chat_display[position]);
-        holder.imageView.setImageResource(images[position]);
+        //Current Data
+        DataSnapshot curr_data = data.get(position);
+        String conversation_id = curr_data.getValue(String.class);
+        String customer_id = curr_data.getKey();
 
+        //Get Conversation
+        conversationReference = FirebaseDatabase.getInstance()
+                .getReference(CONVERSATION)
+                .child(conversation_id);
+        Task<DataSnapshot> load_conversation_last_message =
+                conversationReference.get();
+        load_conversation_last_message.addOnCompleteListener(task->{
+           if(task.isSuccessful()) {
+               DataSnapshot data = task.getResult();
 
+               DataSnapshot messagesReference =
+                       data.child(MESSAGES);
+
+               if(messagesReference.exists()) {
+                   holder.itemView.setVisibility(View.VISIBLE);
+
+                   DataSnapshot lastMessage = null;
+                   int i = 0;
+
+                   for(DataSnapshot ds : messagesReference.getChildren()) {
+                       lastMessage = ds;
+                       i++;
+                       Log.d("MESASGES", Integer.toString(i));
+                       break;
+                   }
+
+                   String strLastMessage = lastMessage.child(MESSAGE)
+                           .getValue(String.class);
+                   Long lastMessageDate = lastMessage.child(MESSAGE_DATE_SENT)
+                           .getValue(Long.class);
+
+                   holder.txtvChatDate.setText(sdf.format(lastMessageDate));
+                   holder.chat_convoDisplay.setText(strLastMessage);
+               } else {
+                   holder.itemView.setVisibility(View.GONE);
+               }
+           }
+        });
+
+        //Get Customer Data
+        customerReference = FirebaseDatabase.getInstance()
+                .getReference(USERS)
+                .child(customer_id);
+        Task<DataSnapshot> load_customer_reference = customerReference.get();
+        load_customer_reference.addOnCompleteListener(task->{
+            if(task.isSuccessful()) {
+                DataSnapshot result = task.getResult();
+
+                String firstName = result.child(FIRST_NAME).getValue(String.class);
+                String lastName = result.child(LAST_NAME).getValue(String.class);
+                String combinedName = firstName.toUpperCase() + ", " + lastName.toUpperCase();
+
+                holder.chat_name.setText(combinedName);
+            }
+        });
+
+        holder.itemView.setOnClickListener(v->{
+            Intent intentToConvo = new Intent(v.getContext(), ChatConversationActivity.class);
+            v.getContext().startActivity(intentToConvo);
+        });
+        ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(
+                        holder.itemView.getContext(),
+                        android.R.layout.simple_list_item_1,
+                        holder.moreSettings.getResources().getStringArray(R.array.more_settings));
+        spinAdapter.setDropDownViewResource(R.layout.spinner_more_settings);
+        holder.moreSettings.setAdapter(spinAdapter);
+        holder.moreSettings.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String selected = holder.moreSettings.getItemAtPosition(i).toString();
+                Toast.makeText(view.getContext().getApplicationContext(), selected,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return chat_name.length;
+        return data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder{
        @BindView(R.id.tv_adapterChatList_Name)
        TextView chat_name;
        @BindView(R.id.tv_adapterChatList_chatDisplay)
        TextView chat_convoDisplay;
        @BindView(R.id.imV_adapterChatList_profile)
        CircleImageView imageView;
-        @BindView(R.id.spinner_chat_list_more)
-        Spinner moreSettings;
+       @BindView(R.id.tv_adapterChatList_chatDate)
+       TextView txtvChatDate;
+       @BindView(R.id.spinner_chat_list_more)
+       Spinner moreSettings;
 
-        public ViewHolder(@NonNull View itemView) {
+       public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
-
-
-            itemView.setOnClickListener(this);
-            ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(context.getApplicationContext(),
-                    android.R.layout.simple_list_item_1,
-                    moreSettings.getResources().getStringArray(R.array.more_settings));
-            spinAdapter.setDropDownViewResource(R.layout.spinner_more_settings);
-            moreSettings.setAdapter(spinAdapter);
-            moreSettings.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    String selected = moreSettings.getItemAtPosition(i).toString();
-                    Toast.makeText(context.getApplicationContext(), selected,Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> adapterView) {
-
-                }
-            });
-        }
-
-
-        @Override
-        public void onClick(View view) {
-
-
-            if (view == itemView){
-                Toast.makeText(context.getApplicationContext(), " Item: " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-                Intent start = new Intent(context.getApplicationContext(), ChatConversationActivity.class);
-                context.startActivity(start);
-
-            }
-
-        }
+       }
     }
 
 }
