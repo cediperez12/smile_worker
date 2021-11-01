@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
+        android:id="@+id/layout_adapter_chat_conversation_counter"
         android:layout_width="wrap_content"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
@@ -61,6 +62,7 @@
 
 
     <LinearLayout
+        android:id="@+id/layout_adapter_chat_conversation_self"
         android:layout_width="wrap_content"
         android:orientation="horizontal"
         android:layout_marginRight="12dp"
