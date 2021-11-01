@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            style="@style/button_fill_transparent"
+            style="@style/button_fill_transparent_blueText"
             android:text="Back"/>
 
         <Button
@@ -29,7 +29,7 @@
             android:layout_alignParentEnd="true"
             android:text="Report"
             android:textColor="@color/red_ED7F7F"
-            style="@style/button_fill_transparent"/>
+            style="@style/button_fill_transparent_blueText"/>
 
     </RelativeLayout>
 
@@ -101,7 +101,7 @@
                         android:id="@+id/view_sched_btn_rate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/button_outline"
+                        style="@style/button_outline_blueStroke"
                         android:text="400.000"
                         android:padding="16dp"/>
 
@@ -124,7 +124,7 @@
                         android:id="@+id/view_sched_btn_fare"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/button_outline"
+                        style="@style/button_outline_blueStroke"
                         android:text="400.000"
                         android:padding="16dp"/>
 
@@ -180,7 +180,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            style="@style/button_fill_transparent"
+            style="@style/button_fill_transparent_blueText"
             android:textColor="@color/red_ED7F7F"
             android:text="Cancel Job"/>
 

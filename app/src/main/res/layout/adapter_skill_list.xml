@@ -17,7 +17,7 @@
         android:id="@+id/adapter_skill_list_btn_remove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/button_fill_transparent"
+        style="@style/button_fill_transparent_blueText"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
         android:text="Remove"/>
 

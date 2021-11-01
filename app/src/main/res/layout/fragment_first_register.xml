@@ -58,7 +58,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
             android:textAppearance="@style/buttonTxtApp"
-            style="@style/button_fill_transparent"
+            style="@style/button_fill_transparent_blueText"
             android:text="CANCEL"
             app:cornerRadius="8dp"
             android:letterSpacing="0.1"/>

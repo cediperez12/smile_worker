@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:textAppearance="@style/buttonTxtApp"
-        style="@style/button_fill_transparent"
+        style="@style/button_fill_transparent_blueText"
         android:text="Skip"/>
     <LinearLayout
         android:layout_alignParentTop="true"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:hint="Gigs name"
-            app:startIconDrawable="@drawable/outline_work_outline_24"
+            app:startIconDrawable="@drawable/outline_business_center_24"
             app:startIconTint="@color/tf_stroke_color_changer"
             style="@style/textInputLayoutField_outline">
 
@@ -100,17 +100,17 @@
             android:layout_width="128dp"
             android:layout_height="64dp"
             android:textAppearance="@style/buttonTxtApp"
-            style="@style/button_fill_transparent"
+            style="@style/button_fill_transparent_blueText"
             android:text="BACK"/>
 
         <Button
             android:id="@+id/btnNext_fr_workSetup_Gigs"
+            style="@style/button_fill"
             android:layout_width="128dp"
             android:layout_height="64dp"
             android:layout_alignParentEnd="true"
-            android:textAppearance="@style/buttonTxtApp"
-            style="@style/button_fill"
-            android:text="NEXT"/>
+            android:text="NEXT"
+            android:textAppearance="@style/buttonTxtApp" />
 
     </RelativeLayout>
 
