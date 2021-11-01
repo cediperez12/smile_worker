@@ -59,6 +59,8 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
     private static final String FIRST_NAME = "_personal_information/first_name";
     private static final String LAST_NAME = "_personal_information/last_name";
     private static final String MESSAGE_DATE_SENT = "dateSent";
+    private static final String INTENT_CONVERSATION_ID_KEY = "CONVERSATION_ID";
+    private static final String INTENT_CUSTOMER_ID_KEY = "CUSTOMER_ID";
 
     public ChatListAdapter(List<DataSnapshot> data) {
         this.data = data;
@@ -147,6 +149,8 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
 
         holder.itemView.setOnClickListener(v->{
             Intent intentToConvo = new Intent(v.getContext(), ChatConversationActivity.class);
+            intentToConvo.putExtra(INTENT_CONVERSATION_ID_KEY, conversation_id);
+            intentToConvo.putExtra(INTENT_CUSTOMER_ID_KEY,customer_id);
             v.getContext().startActivity(intentToConvo);
         });
         ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(
