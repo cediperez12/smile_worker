@@ -26,6 +26,7 @@
             ?attr/colorPrimaryVariant
         </item>
         <!-- Customize your theme here. -->
+        <item name="android:windowActivityTransitions">true</item>
     </style>
 
 
@@ -77,6 +78,8 @@
         <item name="cornerRadius">10dp</item>
         <item name="android:textColor">@color/white_FFFFFF</item>
     </style>
+
+
     <style name="button_fillFont10" parent="Widget.MaterialComponents.Button">
         <item name="backgroundColor">@color/blue_2F80ED</item>
         <item name="cornerRadius">12dp</item>

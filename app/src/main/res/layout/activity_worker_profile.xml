@@ -32,6 +32,17 @@
                     android:text="BACK"
                     android:textAppearance="@style/buttonTxtApp"
                     android:textColor="@color/white_FFFFFF" />
+                <ImageButton
+                    android:id="@+id/imgBtn_activityWorkerProfile_MENU"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="16dp"
+                    android:background="@color/blue_2F80ED"
+                    android:tint="@color/white_FFFFFF"
+                    android:src="@drawable/outline_menu_24"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    />
 
             </RelativeLayout>
 

@@ -10,10 +10,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -43,6 +45,9 @@ Toolbar act_worker_toolbar;
 
 @BindView(R.id.btnBack_act_workerSetup)
     Button btnBack_act_workerSetup;
+
+@BindView(R.id.imgBtn_activityWorkerProfile_MENU)
+    ImageButton imgBtn_activityWorkerProfile_MENU;
 
 private ReviewsFragment reviewsFragment;
 private WorkerProfileFragment workerProfileFragment;
@@ -116,6 +121,15 @@ private GigsWorkerFragment gigsWorkerFragment;
                     getSupportFragmentManager().popBackStack();
                 else
                     onBackPressed();
+            }
+        });
+
+        imgBtn_activityWorkerProfile_MENU.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
 
