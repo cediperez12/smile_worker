@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -60,6 +61,29 @@ public class ChatConversationAdapter extends RecyclerView.Adapter<ChatConversati
         TextView worker_content;
         @BindView(R.id.tv_adapterChatConversation_Ydate)
         TextView worker_content_date;
+
+        //SentReqSched
+        @BindView(R.id.tv_adapter_chat_conversationSentScheduleReq_TIME)
+        TextView tv_adapter_chat_conversationSentScheduleReq_TIME;
+        @BindView(R.id.tv_adapter_chat_conversationSentScheduleReq_DATE)
+        TextView tv_adapter_chat_conversationSentScheduleReq_DATE;
+
+        @BindView(R.id.tv_adapter_chat_conversationSentScheduleReq_GigName)
+        TextView tv_adapter_chat_conversationSentScheduleReq_GigName;
+        @BindView(R.id.tv_adapter_chat_conversationSentScheduleReq_GigDesc)
+        TextView tv_adapter_chat_conversationSentScheduleReq_GigDesc;
+
+        @BindView(R.id.tv_adapter_chat_conversationSentScheduleReq_RATE)
+        TextView tv_adapter_chat_conversationSentScheduleReq_RATE;
+        @BindView(R.id.tv_adapter_chat_conversationSentScheduleReq_FARE)
+        TextView tv_adapter_chat_conversationSentScheduleReq_FARE;
+
+        @BindView(R.id.tv_adapter_chat_conversationSentScheduleReq_RESPONSE)
+        TextView tv_adapter_chat_conversationSentScheduleReq_RESPONSE;
+        @BindView(R.id.imV_adapter_chat_conversationSentScheduleReq_IconSTATUS)
+        ImageView imV_adapter_chat_conversationSentScheduleReq_IconSTATUS;
+
+
 
 
         public ViewHolder(@NonNull View itemView) {
