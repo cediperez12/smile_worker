@@ -9,12 +9,33 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
 import com.smile.worker.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ViewHolderListItem_EducAdapter extends RecyclerView.Adapter<ViewHolderListItem_EducAdapter.ViewHolder>{
+
+    private DataSnapshot data;
+
+    private static final String WORKER_EDUCATION_SCHOOL_LINK =
+            "_worker_profile/_education";
+    private static final String WORKER_EDUCATION_SCHOOL_LEVEL_LINK =
+            "_worker_profile/_education/schoolLevel";
+    private static final String WORKER_EDUCATION_SCHOOL_NAME_LINK =
+            "_worker_profile/_education/schoolName";
+    private static final String WORKER_EDUCATION_SCHOOL_YEAR_LINK =
+            "_worker_profile/_education/year";
+
+    public ViewHolderListItem_EducAdapter (DataSnapshot data) {
+        this.data = data;
+    }
+
+    public ViewHolderListItem_EducAdapter () {
+
+    }
+
     @NonNull
     @Override
     public ViewHolderListItem_EducAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,7 +48,12 @@ public class ViewHolderListItem_EducAdapter extends RecyclerView.Adapter<ViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderListItem_EducAdapter.ViewHolder holder, int position) {
-
+        holder.tv_adapterViewWorker_ItemEduc.setText(data.child(WORKER_EDUCATION_SCHOOL_LEVEL_LINK)
+            .getValue(String.class));
+        holder.tv_adapterViewWorker_ItemEducDesc.setText(data.child(WORKER_EDUCATION_SCHOOL_NAME_LINK)
+            .getValue(String.class));
+        holder.tv_adapterViewWorker_ItemEducYr.setText(data.child(WORKER_EDUCATION_SCHOOL_YEAR_LINK)
+            .getValue(String.class));
     }
 
     @Override

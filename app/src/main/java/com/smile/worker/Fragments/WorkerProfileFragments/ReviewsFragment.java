@@ -29,7 +29,7 @@ import butterknife.ButterKnife;
  */
 public class ReviewsFragment extends Fragment implements View.OnClickListener {
 
-@BindView(R.id.tv_fragmentViewAllReviews)
+    @BindView(R.id.tv_fragmentViewAllReviews)
     TextView tv_fragmentViewAllReviews;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -92,9 +92,6 @@ public class ReviewsFragment extends Fragment implements View.OnClickListener {
         recyclerView.setAdapter(reviewsListAdapter);
 
         tv_fragmentViewAllReviews.setOnClickListener(this);
-
-
-
 
         return v;
     }

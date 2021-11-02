@@ -85,7 +85,9 @@
                         android:layout_weight="2"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <TextView
+                            android:id="@+id/txtv_worker_profile_act_worker_name"
                             android:layout_width="match_parent"
                             android:layout_marginTop="21dp"
                             android:layout_height="wrap_content"
@@ -94,7 +96,9 @@
                             android:textAllCaps="true"
                             android:textAppearance="@style/TxtApp_16"
                             android:textColor="@color/black_323F4B" />
+
                         <TextView
+                            android:id="@+id/txtv_worker_profile_act_worker_profession"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
@@ -102,7 +106,9 @@
                             android:textAllCaps="true"
                             android:textAppearance="@style/TxtApp_12"
                             android:textColor="@color/black_323F4B" />
+
                         <TextView
+                            android:id="@+id/txtv_worker_profile_act_work_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Work description"
