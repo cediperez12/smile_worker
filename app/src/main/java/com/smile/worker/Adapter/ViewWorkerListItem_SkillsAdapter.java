@@ -9,12 +9,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
 import com.smile.worker.R;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ViewWorkerListItem_SkillsAdapter extends RecyclerView.Adapter<ViewWorkerListItem_SkillsAdapter.ViewHolder> {
+
+    private List<String> data;
+
+    public ViewWorkerListItem_SkillsAdapter(List<String> data) {
+        this.data = data;
+    }
+
+    public ViewWorkerListItem_SkillsAdapter () {
+
+    }
+
     @NonNull
     @Override
     public ViewWorkerListItem_SkillsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,12 +41,13 @@ public class ViewWorkerListItem_SkillsAdapter extends RecyclerView.Adapter<ViewW
 
     @Override
     public void onBindViewHolder(@NonNull ViewWorkerListItem_SkillsAdapter.ViewHolder holder, int position) {
-
+        String skill = data.get(position);
+        holder.tv_adapterViewWorker_ItemSkills.setText(skill);
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return data.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

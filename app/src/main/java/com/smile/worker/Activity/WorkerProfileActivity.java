@@ -16,9 +16,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shuhart.stepview.StepView;
 import com.smile.worker.Fragments.WorkerProfileFragments.GigsWorkerFragment;
 import com.smile.worker.Fragments.WorkerProfileFragments.ReviewsFragment;
@@ -32,42 +38,73 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class WorkerProfileActivity extends AppCompatActivity {
-@BindView(R.id.step_view)
-    StepView stepView_verification;
+    @BindView(R.id.step_view)
+        StepView stepView_verification;
 
-@BindView(R.id.act_worker_toolBar)
-Toolbar act_worker_toolbar;
+    @BindView(R.id.act_worker_toolBar)
+    Toolbar act_worker_toolbar;
 
-@BindView(R.id.act_worker_profile_ViewPager)
-    ViewPager act_worker_profile_ViewPager;
-@BindView(R.id.act_worker_profile_tabLayout)
-    TabLayout act_worker_profile_tabLayout;
+    @BindView(R.id.act_worker_profile_ViewPager)
+        ViewPager act_worker_profile_ViewPager;
+    @BindView(R.id.act_worker_profile_tabLayout)
+        TabLayout act_worker_profile_tabLayout;
 
-@BindView(R.id.btnBack_act_workerSetup)
-    Button btnBack_act_workerSetup;
+    @BindView(R.id.btnBack_act_workerSetup)
+        Button btnBack_act_workerSetup;
 
-@BindView(R.id.imgBtn_activityWorkerProfile_MENU)
-    ImageButton imgBtn_activityWorkerProfile_MENU;
+    @BindView(R.id.imgBtn_activityWorkerProfile_MENU)
+        ImageButton imgBtn_activityWorkerProfile_MENU;
 
-private ReviewsFragment reviewsFragment;
-private WorkerProfileFragment workerProfileFragment;
-private GigsWorkerFragment gigsWorkerFragment;
+    @BindView(R.id.txtv_worker_profile_act_worker_name)
+    TextView txtvWorkerName;
+    @BindView(R.id.txtv_worker_profile_act_worker_profession)
+    TextView txtvWorkerProfession;
+    @BindView(R.id.txtv_worker_profile_act_work_description)
+    TextView txtvWorkerDescription;
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(), MainNavigationActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-        finish();
-    }
+    private ReviewsFragment reviewsFragment;
+    private WorkerProfileFragment workerProfileFragment;
+    private GigsWorkerFragment gigsWorkerFragment;
+
+    private DatabaseReference userReference;
+
+    private static final String USER_LINK = "users";
+    private static final String USER_FIRST_NAME_LINK = "_personal_information/first_name";
+    private static final String USER_LAST_NAME_LINK = "_personal_information/last_name";
+    private static final String WORKER_PROFESSION_LINK = "_worker_profile/_workerProfession/workerProfession";
+    private static final String WORKER_DESCRIPTION_LINK = "_worker_profile/_workerProfession/workerDescription";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_worker_profile);
-
         ButterKnife.bind(this);
+
+        //Back end
+        userReference = FirebaseDatabase.getInstance()
+                .getReference(USER_LINK)
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+        //get personal and worker information
+        Task<DataSnapshot> load_user_information = userReference.get();
+        load_user_information.addOnCompleteListener(task->{
+           if(task.isSuccessful()) {
+               DataSnapshot result = task.getResult();
+
+               String first_name = result.child(USER_FIRST_NAME_LINK).getValue(String.class);
+               String last_name = result.child(USER_LAST_NAME_LINK).getValue(String.class);
+               String combined_info = first_name.toUpperCase() + ", " + last_name.toUpperCase();
+
+               String worker_profession = result.child(WORKER_PROFESSION_LINK).getValue(String.class);
+               String worker_description = result.child(WORKER_DESCRIPTION_LINK).getValue(String.class);
+
+               txtvWorkerName.setText(combined_info);
+               txtvWorkerProfession.setText(worker_profession);
+               txtvWorkerDescription.setText(worker_description);
+           } else {
+               task.getException().printStackTrace();
+           }
+        });
 
         act_worker_toolbar = findViewById(R.id.act_worker_toolBar);
         setSupportActionBar(act_worker_toolbar);
@@ -89,8 +126,6 @@ private GigsWorkerFragment gigsWorkerFragment;
         act_worker_profile_tabLayout.getTabAt(0).setIcon(R.drawable.outline_star_border_24);
         act_worker_profile_tabLayout.getTabAt(1).setIcon(R.drawable.outline_badge_24);
         act_worker_profile_tabLayout.getTabAt(2).setIcon(R.drawable.outline_business_center_24);
-
-
 
         stepView_verification.getState()
                 .animationType(StepView.ANIMATION_ALL)
@@ -133,6 +168,11 @@ private GigsWorkerFragment gigsWorkerFragment;
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {

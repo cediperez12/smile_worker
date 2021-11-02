@@ -11,10 +11,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.smile.worker.Adapter.ViewHolderListItem_CertAdapter;
 import com.smile.worker.Adapter.ViewHolderListItem_EducAdapter;
 import com.smile.worker.Adapter.ViewWorkerListItem_SkillsAdapter;
 import com.smile.worker.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,7 +47,21 @@ public class WorkerProfileFragment extends Fragment {
     @BindView(R.id.recyclerView_fragment_gigsEduc)
     RecyclerView recyclerView_fragment_gigsEduc;
 
+    private static final String USERS_LINK = "users";
 
+    private static final String WORKER_EDUCATION_SCHOOL_LINK =
+            "_worker_profile/_education";
+    private static final String WORKER_EDUCATION_SCHOOL_LEVEL_LINK =
+            "_worker_profile/_education/schoolLevel";
+    private static final String WORKER_EDUCATION_SCHOOL_NAME_LINK =
+            "_worker_profile/_education/schoolName";
+    private static final String WORKER_EDUCATION_SCHOOL_YEAR_LINK =
+            "_worker_profile/_education/year";
+
+    private static final String WORKER_SKILLS_LINK = "_worker_profile/_skills";
+
+    private FirebaseUser curr_user;
+    private DatabaseReference userReference;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -87,20 +110,45 @@ public class WorkerProfileFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_worker_profile, container, false);
         ButterKnife.bind(this,v);
 
+        //Get current user
+        curr_user = FirebaseAuth.getInstance().getCurrentUser();
 
-        recyclerView_fragment_gigsSkills.setLayoutManager(
-                new LinearLayoutManager(getActivity()));
-        recyclerView_fragment_gigsSkills.setAdapter(new ViewWorkerListItem_SkillsAdapter());
+        //Backend
+        userReference = FirebaseDatabase.getInstance()
+                .getReference(USERS_LINK)
+                .child(curr_user.getUid());
 
+        Task<DataSnapshot> load_user_data = userReference.get();
+        load_user_data.addOnCompleteListener(task-> {
+           if(task.isSuccessful()) {
+               DataSnapshot result = task.getResult();
+
+               DataSnapshot school_data = result.child(WORKER_EDUCATION_SCHOOL_LINK);
+               DataSnapshot skills_data = result.child(WORKER_SKILLS_LINK);
+
+               List<String> list_of_skills = new ArrayList<>();
+
+               //Arrange Skills
+               for (DataSnapshot data : skills_data.getChildren()) {
+                   list_of_skills.add(data.getValue(String.class));
+               }
+
+               LinearLayoutManager layoutManager = new LinearLayoutManager(this.getContext());
+               LinearLayoutManager layoutManager2 = new LinearLayoutManager(this.getContext());
+               ViewHolderListItem_EducAdapter educ_adapter = new ViewHolderListItem_EducAdapter(school_data);
+               ViewWorkerListItem_SkillsAdapter skill_adapter = new ViewWorkerListItem_SkillsAdapter(list_of_skills);
+
+               recyclerView_fragment_gigsEduc.setLayoutManager(layoutManager);
+               recyclerView_fragment_gigsEduc.setAdapter(educ_adapter);
+
+               recyclerView_fragment_gigsSkills.setLayoutManager(layoutManager2);
+               recyclerView_fragment_gigsSkills.setAdapter(skill_adapter);
+           }
+        });
 
         recyclerView_fragment_gigsCert.setLayoutManager(
                 new LinearLayoutManager(getActivity()));
         recyclerView_fragment_gigsCert.setAdapter(new ViewHolderListItem_CertAdapter());
-
-        recyclerView_fragment_gigsEduc.setLayoutManager(
-                new LinearLayoutManager(getActivity()));
-        recyclerView_fragment_gigsEduc.setAdapter(new ViewHolderListItem_EducAdapter());
-
 
         return v;
     }
