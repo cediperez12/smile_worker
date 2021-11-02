@@ -13,13 +13,13 @@
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imv_adapterChatConversation_Cprofile"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="12dp"
-        android:src="@drawable/arey_sample_pic_chat"
-        />
+            android:id="@+id/imv_adapterChatConversation_Cprofile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/arey_sample_pic_chat"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -118,8 +118,9 @@
     </LinearLayout>
 
 
-<!--    sentScheduleRequest Design Start Here-->
+    <!--    sentScheduleRequest Design Start Here-->
     <LinearLayout
+        android:id="@+id/adapter_chat_conversation_notification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
