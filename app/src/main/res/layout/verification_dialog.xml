@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="24dp"
+    android:background="@drawable/white_corner_shape16"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Verification"
+        android:textStyle="bold"
+        android:textAppearance="@style/textStyle_header"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="22dp"
+        android:singleLine="false"
+        android:text="Click send to verify your account via
+Email to change your password"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/textStyle_captionBlack"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp"
+        android:orientation="horizontal">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_act_changePassword_VerificationDialog_OTP"
+            style="@style/textInputLayoutField_outline"
+            android:textColorHint="@color/gray_7B8794"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="12dp"
+            app:startIconDrawable="@drawable/outline_lock_24"
+            app:startIconTint="@color/tf_stroke_color_changer"
+            android:hint="OTP Code">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:textAppearance="@style/textField_outline"
+                android:textColor="@color/black_323F4B"
+                android:layout_height="wrap_content"
+                 />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_act_changePassword_VerificationDialog_GETCODE"
+            style="@style/button_outline_blueStroke"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:text="Get code"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textAppearance="@style/TxtApp_12"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="22dp"
+        android:singleLine="false"
+        android:text="NOTE: Don't share to anyone your OTP Code"
+        android:textAlignment="viewStart"
+
+        android:textAppearance="@style/textStyle_captionGray"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_act_changePassword_VerificationDialog_VERIFY"
+        style="@style/button_fill"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="64dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="34dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="24dp"
+        android:text="Verify"
+        android:layout_marginBottom="34dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        app:cornerRadius="8dp" />
+
+
+</LinearLayout>
