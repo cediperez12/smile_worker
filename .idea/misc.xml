@@ -23,43 +23,43 @@
         <entry key="..\:/Users/ArEy/AndroidStudioProjects/smile_worker/app/src/main/res/layout/fragment_notif_messages.xml" value="0.33055555555555555" />
         <entry key="..\:/Users/ArEy/AndroidStudioProjects/smile_worker/app/src/main/res/layout/fragment_worker_gigs.xml" value="0.264945652173913" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/baseline_attachment_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/baseline_home_24.xml" value="0.287109375" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/baseline_school_24.xml" value="0.287109375" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/blue_corner_shape.xml" value="0.3828125" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/blue_corner_shape16.xml" value="0.287109375" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/border_left_only.xml" value="0.287109375" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/border_left_only_lblue.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/chip_cat_selected_bg_color.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/chip_cat_selected_font_color.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/chip_cat_selected_stroke_color.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/chip_starSelected.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/chip_star_selected.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/chip_star_selected_bg_color.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/chip_star_selected_font.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/chip_star_selected_icon_color.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/custom_design_progress_bar.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/map_selected.xml" value="0.287109375" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/btn_shadow.xml" value="0.287109375" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/msg_selected.xml" value="0.3828125" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_account_balance_wallet_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_announcement_24.xml" value="0.287109375" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_badge_24.xml" value="0.287109375" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_business_center_24.xml" value="0.287109375" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_collections_24.xml" value="0.3828125" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_construction_24.xml" value="0.287109375" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_edit_note_24.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_filter_list_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_history_edu_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_home_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_menu_24.xml" value="0.287109375" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_more_horiz_24.xml" value="0.3828125" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_more_vert_24.xml" value="0.3828125" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_photo_camera_24.xml" value="0.3828125" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_schedule_send_24.xml" value="0.3828125" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_send_24.xml" value="0.3828125" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/outline_star_border_24.xml" value="0.287109375" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/white_stroke_corner_shape.xml" value="0.29609375" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/round_logout_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/drawable/white_corner_shape16.xml" value="0.287109375" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_change_password.xml" value="0.275" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_chat_conversation.xml" value="0.33" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_login.xml" value="0.275" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_main_navigation.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_notification.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_settings.xml" value="0.275" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_setup_worker_profile.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_welcome.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_worker_profile.xml" value="0.16" />
-        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/adapter_chat_conversation.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/activity_worker_profile.xml" value="0.33" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/adapter_chat_conversation.xml" value="0.33" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/adapter_chat_list.xml" value="0.2" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/adapter_gigls_skill_list.xml" value="0.275" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/adapter_gigs_list.xml" value="0.275" />
@@ -79,11 +79,11 @@
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/fragment_worker_profile.xml" value="0.261328125" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/fragment_worker_profile_skills.xml" value="0.275" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/spinner_more_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/layout/verification_dialog.xml" value="0.275" />
         <entry key="..\:/Users/ArEy/StudioProjects/smile_worker/app/src/main/res/menu/nav_bottom_menu.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/activity_chat_conversation.xml" value="0.1" />
-        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/adapter_chat_conversation.xml" value="0.1" />
-        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/adapter_view_worker_educ_item.xml" value="0.1" />
-        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/fragment_reviews.xml" value="0.1" />
+        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/adapter_chat_list.xml" value="0.1" />
+        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/adapter_messages_notification_list.xml" value="0.2015625" />
+        <entry key="..\:/Users/ChristianDanielNPere/StudioProjects/smile_worker/app/src/main/res/layout/fragment_nav_chat.xml" value="0.1" />
       </map>
     </option>
   </component>

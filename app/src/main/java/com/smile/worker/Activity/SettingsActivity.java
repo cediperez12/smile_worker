@@ -58,7 +58,8 @@ public class SettingsActivity extends AppCompatActivity {
         cardView_actSettings_CHANGEPASS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), " CHANGE PASS ", Toast.LENGTH_SHORT).show();
+               Intent intent = new Intent(getApplicationContext(),ChangePasswordActivity.class);
+               startActivity(intent);
             }
         });
 

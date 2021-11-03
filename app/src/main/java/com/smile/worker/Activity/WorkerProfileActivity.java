@@ -172,7 +172,7 @@ public class WorkerProfileActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+       WorkerProfileActivity.this.finish();
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
