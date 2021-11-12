@@ -95,37 +95,22 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
         conversationReference = FirebaseDatabase.getInstance()
                 .getReference(CONVERSATION)
                 .child(conversation_id);
+
+        //Getting the last conversation message
         Task<DataSnapshot> load_conversation_last_message =
-                conversationReference.get();
+                conversationReference.child(MESSAGES).orderByChild(MESSAGE_DATE_SENT).limitToLast(1).get();
         load_conversation_last_message.addOnCompleteListener(task->{
            if(task.isSuccessful()) {
-               DataSnapshot data = task.getResult();
+               DataSnapshot result = task.getResult();
 
-               DataSnapshot messagesReference =
-                       data.child(MESSAGES);
-
-               if(messagesReference.exists()) {
-                   holder.itemView.setVisibility(View.VISIBLE);
-
-                   DataSnapshot lastMessage = null;
-                   int i = 0;
-
-                   for(DataSnapshot ds : messagesReference.getChildren()) {
-                       lastMessage = ds;
-                       i++;
-                       Log.d("MESASGES", Integer.toString(i));
-                       break;
-                   }
-
-                   String strLastMessage = lastMessage.child(MESSAGE)
+               for(DataSnapshot ds : result.getChildren()){
+                   String strLastMessage = ds.child(MESSAGE)
                            .getValue(String.class);
-                   Long lastMessageDate = lastMessage.child(MESSAGE_DATE_SENT)
+                   Long lastMessageDate = ds.child(MESSAGE_DATE_SENT)
                            .getValue(Long.class);
 
                    holder.txtvChatDate.setText(sdf.format(lastMessageDate));
                    holder.chat_convoDisplay.setText(strLastMessage);
-               } else {
-                   holder.itemView.setVisibility(View.GONE);
                }
            }
         });
