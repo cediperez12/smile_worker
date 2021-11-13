@@ -3,6 +3,7 @@ package com.smile.worker.Activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,6 +50,9 @@ public class ChatConversationActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerView_act_chatConversation)
     RecyclerView recyclerView_act_chatConversation;
+
+    @BindView(R.id.nested_scrollview_chat_conversation)
+    NestedScrollView nested_scrollview_conversation;
 
     @BindView(R.id.btn_chat_conversation_moreBtn)
     ImageButton btn_chat_conversation_moreBtn;
@@ -153,12 +157,20 @@ public class ChatConversationActivity extends AppCompatActivity {
         messagesReference = FirebaseDatabase.getInstance()
                 .getReference(CONVERSATION_LINK)
                 .child(conversation_id)
-                .child(MESSAGES_LINK);
+                .child(MESSAGES_LINK)
+                .orderByChild("dateSent")
+                .getRef();
 
         messagesReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                messages_data.add(snapshot);
+                nested_scrollview_conversation.fullScroll(View.FOCUS_DOWN);
+
+                if(messages_data.size() > 20){
+                    messages_data.remove(messages_data.size()-1);
+                }
+
+                messages_data.add(0, snapshot);
                 adapter.notifyDataSetChanged();
             }
 
@@ -308,9 +320,6 @@ public class ChatConversationActivity extends AppCompatActivity {
         bottomSheet = BottomSheetBehavior.from(findViewById(R.id.card_chat_convo_bottomsheet));
         bottomSheet.setHideable(true);
         bottomSheet.setState(BottomSheetBehavior.STATE_HIDDEN);
-
-
-
     }
 
     private void datePickerResult() {

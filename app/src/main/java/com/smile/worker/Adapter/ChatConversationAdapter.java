@@ -104,7 +104,11 @@ public class ChatConversationAdapter extends RecyclerView.Adapter<ChatConversati
 
     @Override
     public int getItemCount() {
-        return messages_data.size();
+        if(messages_data.size() > 20) {
+            return 20;
+        }else {
+            return messages_data.size();
+        }
     }
 
 
