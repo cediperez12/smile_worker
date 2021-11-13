@@ -20,6 +20,7 @@
             android:textAppearance="@style/buttonTxtApp" />
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scrollview_chat_conversation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/btnBack_act_chatConversation"

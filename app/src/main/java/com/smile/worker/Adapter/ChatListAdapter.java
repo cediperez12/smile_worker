@@ -109,6 +109,10 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
                    Long lastMessageDate = ds.child(MESSAGE_DATE_SENT)
                            .getValue(Long.class);
 
+                   if(strLastMessage.length() >= 18) {
+                       strLastMessage = strLastMessage.substring(0,18) + "...";
+                   }
+
                    holder.txtvChatDate.setText(sdf.format(lastMessageDate));
                    holder.chat_convoDisplay.setText(strLastMessage);
                }
